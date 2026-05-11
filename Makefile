@@ -21,7 +21,7 @@ $(SUBMODULE_PATH)/.git:
 	git submodule add --force $(SUBMODULE_URL) $(SUBMODULE_PATH)
 	git submodule update --init $(SUBMODULE_PATH)
 
-## Generate the .sparse-checkout config file and commit it
+## Generate the .sparse-checkout config file
 $(SPARSE_CHECKOUT_FILE):
 	@echo "[sparse-checkout] Creating $(SPARSE_CHECKOUT_FILE)..."
 	@printf '160GHz_LNA\n40_GHZ_LOW_NOISE_TIA\n' > $(SPARSE_CHECKOUT_FILE)
@@ -31,8 +31,13 @@ update:
 	@echo "[submodule] Updating $(SUBMODULE_PATH)..."
 	git submodule update --remote $(SUBMODULE_PATH)
 
-## Remove the submodule entirely
+## Remove the submodule and symlinks
 clean:
+	@echo "[symlinks] Removing symlinks..."
+	@for dir in $(SPARSE_DIRS); do \
+		rm -f $(SYMLINK_BASE)/$dir && \
+		echo "  removed $(SYMLINK_BASE)/$dir"; \
+	done
 	@echo "[submodule] Removing $(SUBMODULE_PATH)..."
 	git submodule deinit -f $(SUBMODULE_PATH)
 	git rm -f $(SUBMODULE_PATH)
@@ -42,11 +47,13 @@ clean:
 help:
 	@echo ""
 	@echo "Targets:"
-	@echo "  make init    — add submodule and apply sparse-checkout from config (default)"
-	@echo "  make update  — pull latest changes from upstream submodule"
-	@echo "  make clean   — remove the submodule entirely"
-	@echo "  make help    — show this message"
+	@echo "  make init     — add submodule, apply sparse-checkout, create symlinks (default)"
+	@echo "  make symlinks — (re)create symlinks only"
+	@echo "  make update   — pull latest changes from upstream submodule"
+	@echo "  make clean    — remove symlinks and submodule entirely"
+	@echo "  make help     — show this message"
 	@echo ""
+	@echo "Sparse dirs:   $(SPARSE_DIRS)"
 	@echo "Sparse config: $(SPARSE_CHECKOUT_FILE)"
 	@echo "Submodule:     $(SUBMODULE_PATH)"
 	@echo ""
