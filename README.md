@@ -1,8 +1,5 @@
 
-# Openiclib 
-# OpenIClib
-
-## Open Integrated Circuit Library 
+# Openiclib - Open Integrated Circuit Library 
 
 
 **An open source library aggregating successfully taped-out, silicon proven open PDK designs that a) research groups, b) startups and c) integrated electronics & photonics students recur to for IC system-level design.**
