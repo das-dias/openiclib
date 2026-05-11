@@ -1,0 +1,6 @@
+[submodule "pdks/ihp/lna/160GHz_LNA"]
+	path = pdks/ihp/lna/160GHz_LNA
+	url = https://github.com/IHP-GmbH/TO_Apr2025/160GHz_LNA.git
+[submodule "pdks/ihp/lna/40_GHZ_LOW_NOISE_TIA"]
+	path = pdks/ihp/lna/40_GHZ_LOW_NOISE_TIA
+	url = https://github.com/IHP-GmbH/TO_Apr2025/40_GHZ_LOW_NOISE_TIA.git

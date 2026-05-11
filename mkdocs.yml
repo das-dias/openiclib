@@ -1,0 +1,42 @@
+site_name: Openiclib
+site_description: Openiclib is an open-source library for open-source PDK silicon-proven circuits and systems.
+site_url: https://openiclib.github.io
+theme:
+  name: shadcn
+  icon: null
+  topbar_sections: false
+  pygments_style:
+    light: shadcn-light
+    dark: github-dark
+  katex_options:
+    trust: true
+    macros:
+      "\\dx": "\\mathrm{d}x"
+      "\\NN": "\\mathbb{N}"
+  # show_datetime: true
+  # accent: "oklch(64.5% 0.246 16.439)"
+
+plugins:
+  - search
+  - mkdocstrings
+
+markdown_extensions:
+  admonition:
+  codehilite:
+  fenced_code:
+  footnotes:
+  extra:
+  pymdownx.blocks.details:
+  pymdownx.tabbed:
+  pymdownx.blocks.tab:
+    combine_header_slug: true
+    separator: ___
+  pymdownx.progressbar:
+  pymdownx.snippets:
+  pymdownx.arithmatex:
+    generic: true
+  shadcn.extensions.echarts.alpha:
+  shadcn.extensions.codexec:
+  shadcn.extensions.iconify:
+  pymdownx.blocks.caption:
+  shadcn.extensions.hover_card:
