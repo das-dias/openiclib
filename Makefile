@@ -1,17 +1,17 @@
-SUBMODULE_URL  := https://github.com/IHP-GmbH/TO_Apr2025.git
-SUBMODULE_PATH := pdks/ihp/TO_Apr2025
-SPARSE_DIRS    := 160GHz_LNA 40_GHZ_LOW_NOISE_TIA
+SUBMODULE_URL         := https://github.com/IHP-GmbH/TO_Apr2025.git
+SUBMODULE_PATH        := pdks/ihp/TO_Apr2025
+SPARSE_CHECKOUT_FILE  := $(SUBMODULE_PATH)/.sparse-checkout
 
 .PHONY: all init update clean help
 
 all: init
 
-## Set up the submodule and configure sparse-checkout
-init: $(SUBMODULE_PATH)/.git
-	@echo "[sparse-checkout] Configuring sparse-checkout..."
+## Set up the submodule and apply sparse-checkout from committed config file
+init: $(SUBMODULE_PATH)/.git $(SPARSE_CHECKOUT_FILE)
+	@echo "[sparse-checkout] Applying $(SPARSE_CHECKOUT_FILE)..."
 	cd $(SUBMODULE_PATH) && \
 		git sparse-checkout init --cone && \
-		git sparse-checkout set $(SPARSE_DIRS)
+		git sparse-checkout set $(cat ../.sparse-checkout)
 	@echo "[sparse-checkout] Done. Active directories:"
 	cd $(SUBMODULE_PATH) && git sparse-checkout list
 
@@ -20,6 +20,13 @@ $(SUBMODULE_PATH)/.git:
 	@echo "[submodule] Adding $(SUBMODULE_URL) -> $(SUBMODULE_PATH)"
 	git submodule add --force $(SUBMODULE_URL) $(SUBMODULE_PATH)
 	git submodule update --init $(SUBMODULE_PATH)
+
+## Generate the .sparse-checkout config file and commit it
+$(SPARSE_CHECKOUT_FILE):
+	@echo "[sparse-checkout] Creating $(SPARSE_CHECKOUT_FILE)..."
+	@printf '160GHz_LNA\n40_GHZ_LOW_NOISE_TIA\n' > $(SPARSE_CHECKOUT_FILE)
+	git add $(SPARSE_CHECKOUT_FILE)
+	@echo "[sparse-checkout] $(SPARSE_CHECKOUT_FILE) created and staged — commit it to persist."
 
 ## Pull latest changes in the submodule
 update:
@@ -37,11 +44,11 @@ clean:
 help:
 	@echo ""
 	@echo "Targets:"
-	@echo "  make init    — add submodule and configure sparse-checkout (default)"
+	@echo "  make init    — add submodule and apply sparse-checkout from config (default)"
 	@echo "  make update  — pull latest changes from upstream submodule"
 	@echo "  make clean   — remove the submodule entirely"
 	@echo "  make help    — show this message"
 	@echo ""
-	@echo "Sparse dirs: $(SPARSE_DIRS)"
-	@echo "Submodule:   $(SUBMODULE_PATH)"
+	@echo "Sparse config: $(SPARSE_CHECKOUT_FILE)"
+	@echo "Submodule:     $(SUBMODULE_PATH)"
 	@echo ""
