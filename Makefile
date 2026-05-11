@@ -1,6 +1,6 @@
 SUBMODULE_URL         := https://github.com/IHP-GmbH/TO_Apr2025.git
 SUBMODULE_PATH        := pdks/ihp/TO_Apr2025
-SPARSE_CHECKOUT_FILE  := $(SUBMODULE_PATH)/.sparse-checkout
+SPARSE_CHECKOUT_FILE  := pdks/ihp/TO_Apr2025.sparse-checkout
 
 .PHONY: all init update clean help
 
@@ -25,8 +25,6 @@ $(SUBMODULE_PATH)/.git:
 $(SPARSE_CHECKOUT_FILE):
 	@echo "[sparse-checkout] Creating $(SPARSE_CHECKOUT_FILE)..."
 	@printf '160GHz_LNA\n40_GHZ_LOW_NOISE_TIA\n' > $(SPARSE_CHECKOUT_FILE)
-	git add $(SPARSE_CHECKOUT_FILE)
-	@echo "[sparse-checkout] $(SPARSE_CHECKOUT_FILE) created and staged — commit it to persist."
 
 ## Pull latest changes in the submodule
 update:
