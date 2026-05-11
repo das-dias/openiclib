@@ -1,59 +1,61 @@
-SUBMODULE_URL         := https://github.com/IHP-GmbH/TO_Apr2025.git
-SUBMODULE_PATH        := pdks/ihp/TO_Apr2025
-SPARSE_CHECKOUT_FILE  := pdks/ihp/TO_Apr2025.sparse-checkout
+REPO_URL     := https://github.com/IHP-GmbH/TO_Apr2025.git
+CLONE_PATH   := pdks/ihp/TO_Apr2025
+SPARSE_DIRS  := 160GHz_LNA 40_GHZ_LOW_NOISE_TIA
 
-.PHONY: all init update clean help
+.PHONY: all init symlinks update clean help
 
 all: init
 
-## Set up the submodule and apply sparse-checkout from committed config file
-init: $(SUBMODULE_PATH)/.git $(SPARSE_CHECKOUT_FILE)
-	@echo "[sparse-checkout] Applying $(SPARSE_CHECKOUT_FILE)..."
-	cd $(SUBMODULE_PATH) && \
+## Clone repo with only the specified sparse directories, then create symlinks
+init: $(CLONE_PATH)/.git symlinks
+
+$(CLONE_PATH)/.git:
+	@echo "[clone] Sparse cloning $(REPO_URL) -> $(CLONE_PATH)"
+	git clone --filter=blob:none --no-checkout $(REPO_URL) $(CLONE_PATH)
+	cd $(CLONE_PATH) && \
 		git sparse-checkout init --cone && \
-		git sparse-checkout set $(cat ../.sparse-checkout)
-	@echo "[sparse-checkout] Done. Active directories:"
-	cd $(SUBMODULE_PATH) && git sparse-checkout list
+		git sparse-checkout set $(SPARSE_DIRS) && \
+		git checkout
 
-## Add the submodule if it doesn't exist yet
-$(SUBMODULE_PATH)/.git:
-	@echo "[submodule] Adding $(SUBMODULE_URL) -> $(SUBMODULE_PATH)"
-	git submodule add --force $(SUBMODULE_URL) $(SUBMODULE_PATH)
-	git submodule update --init $(SUBMODULE_PATH)
-
-## Generate the .sparse-checkout config file
-$(SPARSE_CHECKOUT_FILE):
-	@echo "[sparse-checkout] Creating $(SPARSE_CHECKOUT_FILE)..."
-	@printf '160GHz_LNA\n40_GHZ_LOW_NOISE_TIA\n' > $(SPARSE_CHECKOUT_FILE)
-
-## Pull latest changes in the submodule
-update:
-	@echo "[submodule] Updating $(SUBMODULE_PATH)..."
-	git submodule update --remote $(SUBMODULE_PATH)
-
-## Remove the submodule and symlinks
-clean:
-	@echo "[symlinks] Removing symlinks..."
+## Create symlinks in pdks/ihp/ pointing into the cloned directories
+symlinks:
+	@echo "[symlinks] Creating symlinks..."
 	@for dir in $(SPARSE_DIRS); do \
-		rm -f $(SYMLINK_BASE)/$dir && \
-		echo "  removed $(SYMLINK_BASE)/$dir"; \
+		target=pdks/ihp/$$dir; \
+		if [ -L $$target ]; then \
+			echo "  $$target already exists, skipping."; \
+		else \
+			ln -s TO_Apr2025/$$dir $$target && \
+			echo "  created $$target -> TO_Apr2025/$$dir"; \
+		fi \
 	done
-	@echo "[submodule] Removing $(SUBMODULE_PATH)..."
-	git submodule deinit -f $(SUBMODULE_PATH)
-	git rm -f $(SUBMODULE_PATH)
-	rm -rf .git/modules/$(SUBMODULE_PATH)
-	@echo "[submodule] Done. Remember to commit the changes."
+	git add $(addprefix pdks/ihp/, $(SPARSE_DIRS))
+	@echo "[symlinks] Symlinks staged — commit to persist."
+
+## Pull latest changes
+update:
+	@echo "[update] Pulling latest changes in $(CLONE_PATH)..."
+	cd $(CLONE_PATH) && git pull
+
+## Remove the clone and symlinks
+clean:
+	@echo "[clean] Removing symlinks..."
+	@for dir in $(SPARSE_DIRS); do \
+		rm -f pdks/ihp/$$dir && echo "  removed pdks/ihp/$$dir"; \
+	done
+	@echo "[clean] Removing $(CLONE_PATH)..."
+	rm -rf $(CLONE_PATH)
 
 help:
 	@echo ""
 	@echo "Targets:"
-	@echo "  make init     — add submodule, apply sparse-checkout, create symlinks (default)"
+	@echo "  make init     — sparse clone and create symlinks (default)"
 	@echo "  make symlinks — (re)create symlinks only"
-	@echo "  make update   — pull latest changes from upstream submodule"
-	@echo "  make clean    — remove symlinks and submodule entirely"
+	@echo "  make update   — pull latest changes"
+	@echo "  make clean    — remove clone and symlinks"
 	@echo "  make help     — show this message"
 	@echo ""
-	@echo "Sparse dirs:   $(SPARSE_DIRS)"
-	@echo "Sparse config: $(SPARSE_CHECKOUT_FILE)"
-	@echo "Submodule:     $(SUBMODULE_PATH)"
+	@echo "Repo:        $(REPO_URL)"
+	@echo "Clone path:  $(CLONE_PATH)"
+	@echo "Sparse dirs: $(SPARSE_DIRS)"
 	@echo ""
