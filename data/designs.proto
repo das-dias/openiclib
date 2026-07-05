@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package openiclib;
+
+import "google/protobuf/timestamp.proto";
+
+enum PDK {
+  PDK_UNKNOWN = 0;
+  PDK_SKYWATER130 = 1;
+  PDK_IHP130SG = 2;
+  PDK_GF180 = 3;
+  PDK_GF90 = 4;
+  PDK_GF45 = 5;
+}
+
+enum CircuitClass {
+  CIRCUIT_CLASS_UNKNOWN = 0;
+  CIRCUIT_CLASS_ANALOG = 1;
+  CIRCUIT_CLASS_DIGITAL = 2;
+  CIRCUIT_CLASS_MIXED_SIGNAL = 3;
+  CIRCUIT_CLASS_OPTICAL = 4;
+}
+
+enum ClassifiedBy {
+  CLASSIFIED_BY_UNSPECIFIED = 0;
+  CLASSIFIED_BY_MANUAL = 1;
+  CLASSIFIED_BY_LLM_GITHUB_MODELS = 2;
+  CLASSIFIED_BY_LLM_CLAUDE = 3;
+  CLASSIFIED_BY_LLM_OLLAMA = 4;
+}
+
+message Design {
+  string id = 1;
+  string name = 2;
+  string summary = 3;
+  string source_url = 4;
+  string repo_owner = 5;
+  string repo_name = 6;
+  PDK pdk = 7;
+  CircuitClass circuit_class = 8;
+  repeated string circuit_type = 9;
+  bool silicon_proven = 10;
+  map<string, string> specifications = 11;
+  repeated string tags = 12;
+  ClassifiedBy classified_by = 13;
+  google.protobuf.Timestamp classified_at = 14;
+  optional string local_path = 15;
+  string readme_excerpt = 16;
+}
+
+message DesignDatabase {
+  string version = 1;
+  google.protobuf.Timestamp generated_at = 2;
+  repeated Design designs = 3;
+}

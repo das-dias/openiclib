@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2025-05-11T00:00:00Z",
+  "designs": [
+    {
+      "id": "ihp-160ghz-lna",
+      "name": "160 GHz Low Noise Amplifier with 27-GHz Bandwidth",
+      "summary": "A Low Noise Amplifier (LNA) designed in IHP SG13G2 BiCMOS technology achieving 5.77 dB noise figure at 160 GHz with 27 GHz bandwidth (146-173 GHz) and 12.5 dB peak gain.",
+      "source_url": "https://github.com/IHP-GmbH/TO_Apr2025/tree/main/160GHz_LNA",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "TO_Apr2025",
+      "pdk": "ihp130sg",
+      "circuit_class": "analog",
+      "circuit_type": ["LNA"],
+      "silicon_proven": true,
+      "specifications": {
+        "bandwidth": "146-173 GHz",
+        "noise_figure": "5.77 dB @ 160 GHz",
+        "peak_gain": "12.5 dB @ 157 GHz",
+        "input_p1db": "-11.4 dBm @ 160 GHz"
+      },
+      "tags": ["mm-wave", "D-band", "BiCMOS", "tapeout-apr2025"],
+      "classified_by": "manual",
+      "classified_at": "2025-05-11T00:00:00Z",
+      "local_path": "pdks/ihp/160GHz_LNA",
+      "readme_excerpt": "This repository contains the complete design files for a Low Noise Amplifier (LNA) with a bandwidth of 27 GHz. The amplifier achieves a noise figure of 5.77 dB at 160 GHz."
+    },
+    {
+      "id": "ihp-40ghz-tia",
+      "name": "Low-Noise Single Ended TIA with 40-GHz Bandwidth",
+      "summary": "A DC to 40 GHz Single Ended Transimpedance Amplifier (TIA) in IHP SG13G2 BiCMOS technology optimized for low input-referred current noise density of ~9.5 pA/√Hz.",
+      "source_url": "https://github.com/IHP-GmbH/TO_Apr2025/tree/main/40_GHZ_LOW_NOISE_TIA",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "TO_Apr2025",
+      "pdk": "ihp130sg",
+      "circuit_class": "analog",
+      "circuit_type": ["TIA"],
+      "silicon_proven": true,
+      "specifications": {
+        "bandwidth": "DC to 40 GHz",
+        "input_noise_density": "~9.5 pA/√Hz",
+        "topology": "single-ended"
+      },
+      "tags": ["broadband", "optical", "BiCMOS", "tapeout-apr2025"],
+      "classified_by": "manual",
+      "classified_at": "2025-05-11T00:00:00Z",
+      "local_path": "pdks/ihp/40_GHZ_LOW_NOISE_TIA",
+      "readme_excerpt": "This repository contains the design files for a DC to 40 GHz Single Ended Transimpedance Amplifier (TIA) optimized for low input-referred current noise density. The final design achieves ~9.5 pA/√Hz."
+    }
+  ]
+}
