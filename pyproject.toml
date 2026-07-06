@@ -38,7 +38,7 @@ testpaths = ["tests"]
 [tool.ruff]
 target-version = "py312"
 line-length = 100
-extend-exclude = ["pdks", "*_pb2.py", "*_pb2.pyi"]
+extend-exclude = ["pdks", "*_pb2.py", "*_pb2.pyi", "hooks"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]

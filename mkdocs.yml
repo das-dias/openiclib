@@ -1,6 +1,23 @@
 site_name: Openiclib
 site_description: Openiclib is an open-source library for open-source PDK silicon-proven circuits and systems.
 site_url: https://openiclib.github.io
+
+hooks:
+  - hooks/catalog_hook.py
+
+extra_css:
+  - assets/catalog.css
+
+extra_javascript:
+  - assets/catalog.js
+
+nav:
+  - Home: index.md
+  - Catalog: catalog.md
+  - Technologies: technologies.md
+  - Examples: examples.md
+  - Submitting: submitting.md
+
 theme:
   name: shadcn
   icon: null

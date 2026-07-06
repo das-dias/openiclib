@@ -26,32 +26,31 @@ Each milestone produces one commit.
 - [x] Extend CLI: `openiclib discover --source github [--dry-run] --output candidates.json`
 - [x] Update `pyproject.toml`: add httpx, pytest-asyncio dependency
 - [x] Write tests: `tests/test_discover.py` with mocked HTTP responses (12 tests)
+- [ ] Tune discovery queries for higher precision:
+  - Add PDK-specific topics: `sg13g2`, `gf180mcu-pdk`, `sky130-pdk`, `open-source-asic`
+  - Add circuit-type keyword queries: `"VCO" OR "DCO" pdk`, `"SERDES" open-source`, `"DC-DC converter" tapeout`, `"PLL" silicon`
+  - Add foundry-specific orgs: `SiLabs`, `TinyTapeout`, `zerotoasiccourse`
+  - Add language filters to keyword queries (e.g. `language:verilog`, `language:spice`) to reduce false positives
+  - Move queries to a configurable YAML/TOML file (`data/discovery_queries.yml`) so they can be tuned without code changes
+  - Add negative filters to exclude common false positives (e.g. pure-software repos, documentation-only repos)
 
 ---
 
-## Milestone 3: LLM Classification Pipeline
-
-- [ ] Create `src/openiclib/llm.py`: `LLMBackend` protocol + `GitHubModelsBackend` (primary, uses `GITHUB_TOKEN` via Azure AI inference), `AnthropicBackend`, `OllamaBackend`
-- [ ] Create `src/openiclib/prompts.py`: system prompt with classification taxonomy, few-shot examples from M1 seed data
-- [ ] Create `src/openiclib/classify.py`: takes `CandidateRepo` → LLM → `Design`, merge logic
-- [ ] Extend CLI: `openiclib classify --input candidates.json --backend github-models --merge data/designs.json`
-- [ ] Update `pyproject.toml`: add `azure-ai-inference`; optional dep group `[anthropic]`
-- [ ] Write tests: `tests/test_classify.py` with mocked LLM responses
-- [ ] Create `.github/workflows/classify.yml`: weekly cron + manual dispatch → discover → classify → open PR
+## ~~Milestone 3: LLM Classification Pipeline~~ (skipped)
 
 ---
 
-## Milestone 4: MkDocs Catalog Page with Filterable Cards
+## Milestone 3: MkDocs Catalog Page with Filterable Cards
 
-- [ ] Create `hooks/catalog_hook.py`: MkDocs hook (`on_files`) — reads `data/designs.json`, generates `catalog.md` with HTML card grid + filter controls
-- [ ] Create `docs/assets/catalog.js`: client-side filtering (PDK, circuit class, circuit type dropdowns; silicon-proven toggle; text search)
-- [ ] Create `docs/assets/catalog.css`: card grid layout using shadcn CSS variables (light/dark compatible)
-- [ ] Update `mkdocs.yml`: add `hooks:`, `extra_javascript`, `extra_css`, nav entry for Catalog
-- [ ] Verify: `mkdocs serve` shows catalog with working filters, correct card count, dark mode
+- [x] Create `hooks/catalog_hook.py`: MkDocs `on_pre_build` hook — reads `data/designs.json`, writes `docs/catalog.md` with GitHub-style card grid + filter controls
+- [x] Create `docs/assets/catalog.js`: client-side filtering (PDK, circuit class, circuit type dropdowns; silicon-proven toggle; text search)
+- [x] Create `docs/assets/catalog.css`: GitHub-style card layout with shadcn CSS variable fallbacks
+- [x] Update `mkdocs.yml`: add `hooks:`, `extra_javascript`, `extra_css`, nav with Catalog page
+- [x] Each card shows: linked title, summary, PDK/class/type badges, specs, repo link with icon
 
 ---
 
-## Milestone 5: Stats Dashboard, Docs Content & Deploy Pipeline
+## Milestone 4: Stats Dashboard, Docs Content & Deploy Pipeline
 
 - [ ] Extend `hooks/catalog_hook.py` to also generate `stats.md` with ECharts blocks (distribution by PDK, circuit class, circuit type, silicon-proven)
 - [ ] Create `src/openiclib/stats.py`: generate stats dicts from `DesignDatabase`
