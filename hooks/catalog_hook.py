@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from html import escape
 from pathlib import Path
 
@@ -19,6 +20,9 @@ def on_pre_build(*, config: MkDocsConfig) -> None:
 
     catalog_path = Path(config.docs_dir) / "catalog.md"
     catalog_path.write_text(_render_catalog(designs))
+
+    stats_path = Path(config.docs_dir) / "stats.md"
+    stats_path.write_text(_render_stats(designs))
 
     assets_dir = Path(config.docs_dir) / "assets"
     assets_dir.mkdir(exist_ok=True)
@@ -68,6 +72,83 @@ def _select(id_: str, placeholder: str, options: list[str]) -> str:
         label = o.replace("-", " ").replace("_", " ").title()
         opts.append(f'    <option value="{escape(o)}">{escape(label)}</option>')
     return f'    <select id="{id_}" class="catalog-select">\n' + "\n".join(opts) + "\n    </select>"
+
+
+def _render_stats(designs: list[dict]) -> str:
+    pdk_counts = Counter(d.get("pdk", "unknown") for d in designs)
+    class_counts = Counter(d.get("circuit_class", "unknown") for d in designs)
+    type_counts = Counter(t for d in designs for t in d.get("circuit_type", []))
+    proven = sum(1 for d in designs if d.get("silicon_proven"))
+    unverified = len(designs) - proven
+
+    def _pie_chart(title: str, data: dict[str, int]) -> str:
+        items = [{"name": k.replace("-", " ").title(), "value": v} for k, v in data.items()]
+        option = json.dumps(
+            {
+                "title": {"text": title, "left": "center"},
+                "tooltip": {"trigger": "item"},
+                "series": [
+                    {
+                        "type": "pie",
+                        "radius": "65%",
+                        "data": items,
+                        "emphasis": {
+                            "itemStyle": {
+                                "shadowBlur": 10,
+                                "shadowOffsetX": 0,
+                                "shadowColor": "rgba(0, 0, 0, 0.5)",
+                            }
+                        },
+                    }
+                ],
+            },
+            indent=2,
+        )
+        return f"```echarts\n{option}\n```"
+
+    def _bar_chart(title: str, data: dict[str, int]) -> str:
+        sorted_items = sorted(data.items(), key=lambda x: x[1], reverse=True)
+        categories = [k for k, _ in sorted_items]
+        values = [v for _, v in sorted_items]
+        option = json.dumps(
+            {
+                "title": {"text": title, "left": "center"},
+                "tooltip": {"trigger": "axis"},
+                "xAxis": {"type": "category", "data": categories, "axisLabel": {"rotate": 30}},
+                "yAxis": {"type": "value", "minInterval": 1},
+                "series": [{"type": "bar", "data": values}],
+            },
+            indent=2,
+        )
+        return f"```echarts\n{option}\n```"
+
+    parts = [
+        "---",
+        "title: Stats",
+        "---",
+        "",
+        "# Design Statistics",
+        "",
+        f"**{len(designs)}** designs indexed across **{len(pdk_counts)}** PDK technologies.",
+        "",
+        "## Distribution by PDK",
+        "",
+        _pie_chart("Designs by PDK", dict(pdk_counts)),
+        "",
+        "## Distribution by Circuit Class",
+        "",
+        _pie_chart("Designs by Circuit Class", dict(class_counts)),
+        "",
+        "## Circuit Types",
+        "",
+        _bar_chart("Designs by Circuit Type", dict(type_counts)),
+        "",
+        "## Silicon Proven",
+        "",
+        _pie_chart("Silicon Proven Status", {"Silicon Proven": proven, "Unverified": unverified}),
+        "",
+    ]
+    return "\n".join(parts) + "\n"
 
 
 def _render_card(d: dict) -> str:

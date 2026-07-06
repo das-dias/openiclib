@@ -11,7 +11,7 @@ Openiclib is an open-source library aggregating silicon-proven, taped-out IC des
 - **Python 3.12**, managed with **uv** (build backend: `uv_build`)
 - **Docs**: MkDocs with the `shadcn` theme. Serve locally with `uv run mkdocs serve`
 - **Linting**: `uv run ruff check .` (rules: E, F, I, UP; line-length 100; pdks/ excluded)
-- **Tests**: `uv run pytest` (31 tests covering models and database)
+- **Tests**: `uv run pytest` (67 tests covering models, database, discovery, stats, and catalog hook)
 - **CLI**: `uv run openiclib db list`, `uv run openiclib db validate`
 
 ## Key Commands
@@ -65,8 +65,12 @@ Each design is classified by:
 
 Key modules:
 - `src/openiclib/models.py` — Pydantic models: `Design`, `DesignDatabase`, enums
-- `src/openiclib/db.py` — Load/save/validate the JSON database
+- `src/openiclib/db.py` — Load/save/validate the JSON database + protobuf conversion
 - `src/openiclib/cli.py` — Click CLI entry point
+- `src/openiclib/discover.py` — GitHub repo discovery (async, httpx)
+- `src/openiclib/discover_gitlab.py` — GitLab repo discovery
+- `src/openiclib/stats.py` — Statistics generation from DesignDatabase
+- `hooks/catalog_hook.py` — MkDocs on_pre_build hook generating catalog.md, stats.md, and designs.json
 
 ### Docs site
 

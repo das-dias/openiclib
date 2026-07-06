@@ -52,11 +52,11 @@ Each milestone produces one commit.
 
 ## Milestone 4: Stats Dashboard, Docs Content & Deploy Pipeline
 
-- [ ] Extend `hooks/catalog_hook.py` to also generate `stats.md` with ECharts blocks (distribution by PDK, circuit class, circuit type, silicon-proven)
-- [ ] Create `src/openiclib/stats.py`: generate stats dicts from `DesignDatabase`
-- [ ] Fill `docs/technologies.md`: supported PDKs with links to foundry docs
-- [ ] Fill `docs/submitting.md`: how to submit designs, required file formats, classification tags
-- [ ] Fill `docs/examples.md`: walkthrough of IHP designs, how to use the library
-- [ ] Create `.github/workflows/deploy.yml`: on push to main → mkdocs build → GitHub Pages
+- [x] Extend `hooks/catalog_hook.py` to also generate `stats.md` with ECharts blocks (distribution by PDK, circuit class, circuit type, silicon-proven)
+- [x] Create `src/openiclib/stats.py`: generate stats dicts from `DesignDatabase`
+- [x] Fill `docs/technologies.md`: supported PDKs with links to foundry docs
+- [x] Fill `docs/submitting.md`: how to submit designs, required file formats, classification tags
+- [x] Fill `docs/examples.md`: walkthrough of IHP designs, how to use the library
+- [x] Create `.github/workflows/deploy.yml`: on push to main → mkdocs build → GitHub Pages
 - [ ] Polish `.github/workflows/classify.yml`: PR creation instead of direct push, validation step
-- [ ] Write tests: `tests/test_stats.py`, `tests/test_catalog_hook.py`
+- [x] Write tests: `tests/test_stats.py`, `tests/test_catalog_hook.py`
