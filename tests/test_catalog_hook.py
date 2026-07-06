@@ -47,7 +47,7 @@ def test_generates_catalog(tmp_path):
     docs_dir, config = _setup_env(tmp_path)
     on_pre_build(config=config)
 
-    catalog = docs_dir / "catalog.md"
+    catalog = docs_dir / "library.md"
     assert catalog.exists()
     content = catalog.read_text()
     assert "Test LNA" in content
@@ -81,7 +81,7 @@ def test_card_has_source_link(tmp_path):
     docs_dir, config = _setup_env(tmp_path)
     on_pre_build(config=config)
 
-    content = (docs_dir / "catalog.md").read_text()
+    content = (docs_dir / "library.md").read_text()
     assert 'href="https://github.com/org/repo"' in content
     assert "org/repo" in content
 
@@ -90,7 +90,7 @@ def test_card_has_badges(tmp_path):
     docs_dir, config = _setup_env(tmp_path)
     on_pre_build(config=config)
 
-    content = (docs_dir / "catalog.md").read_text()
+    content = (docs_dir / "library.md").read_text()
     assert "badge-pdk" in content
     assert "badge-class" in content
     assert "badge-proven" in content
@@ -100,7 +100,7 @@ def test_card_has_specs(tmp_path):
     docs_dir, config = _setup_env(tmp_path)
     on_pre_build(config=config)
 
-    content = (docs_dir / "catalog.md").read_text()
+    content = (docs_dir / "library.md").read_text()
     assert "card-spec" in content
     assert "gain" in content
     assert "10 dB" in content
@@ -123,7 +123,7 @@ def test_no_db_file(tmp_path):
     config.docs_dir = str(docs_dir)
 
     on_pre_build(config=config)
-    assert not (docs_dir / "catalog.md").exists()
+    assert not (docs_dir / "library.md").exists()
     assert not (docs_dir / "stats.md").exists()
 
 
@@ -140,7 +140,7 @@ def test_empty_designs(tmp_path):
     config.docs_dir = str(docs_dir)
     on_pre_build(config=config)
 
-    assert (docs_dir / "catalog.md").exists()
+    assert (docs_dir / "library.md").exists()
     assert (docs_dir / "stats.md").exists()
     content = (docs_dir / "stats.md").read_text()
     assert "**0** designs" in content

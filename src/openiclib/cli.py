@@ -9,7 +9,7 @@ from pathlib import Path
 
 import click
 
-from openiclib.db import DEFAULT_DB_PATH, load_database, validate_database
+from openiclib.db import DEFAULT_DB_PATH, load_database, save_database, validate_database
 
 
 @click.group()
@@ -152,3 +152,92 @@ async def _discover_async(source: str, output: Path, dry_run: bool) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(data, indent=2) + "\n")
     click.echo(f"Written to {output}")
+
+
+@main.command()
+@click.option(
+    "--input",
+    "input_path",
+    type=click.Path(exists=True, path_type=Path),
+    default="candidates.json",
+    help="Path to candidates JSON from discovery",
+)
+@click.option(
+    "--output",
+    "output_path",
+    type=click.Path(path_type=Path),
+    default=DEFAULT_DB_PATH,
+    help="Output designs.json path",
+)
+@click.option("--force", is_flag=True, help="Re-classify existing designs")
+@click.option("--dry-run", is_flag=True, help="Print classifications without saving")
+@click.option("-v", "--verbose", is_flag=True, help="Enable verbose logging")
+def classify(
+    input_path: Path,
+    output_path: Path,
+    force: bool,
+    dry_run: bool,
+    verbose: bool,
+) -> None:
+    """Classify discovery candidates into designs using keyword + TF-IDF matching."""
+    if verbose:
+        logging.basicConfig(level=logging.INFO)
+
+    from openiclib.keyword_classifier import classify_candidate
+
+    candidates = json.loads(input_path.read_text())
+    click.echo(f"Loaded {len(candidates)} candidate(s) from {input_path}")
+
+    if output_path.exists():
+        database = load_database(output_path)
+    else:
+        from datetime import UTC, datetime
+
+        from openiclib.models import DesignDatabase
+
+        database = DesignDatabase(generated_at=datetime.now(UTC))
+
+    existing_urls = {d.source_url for d in database.designs}
+    added = 0
+    skipped = 0
+
+    for i, c in enumerate(candidates, 1):
+        url = c["url"]
+        if url in existing_urls and not force:
+            skipped += 1
+            continue
+
+        design = classify_candidate(
+            url=url,
+            owner=c["owner"],
+            name=c["name"],
+            description=c.get("description", ""),
+            topics=c.get("topics", []),
+            readme_text=c.get("readme_text", ""),
+        )
+
+        if design is None:
+            continue
+
+        if force and url in existing_urls:
+            database.designs = [d for d in database.designs if d.source_url != url]
+            existing_urls.discard(url)
+
+        database.designs.append(design)
+        existing_urls.add(url)
+        added += 1
+
+        if dry_run:
+            types = ", ".join(design.circuit_type)
+            click.echo(
+                f"  {design.name} | {design.pdk} | {design.circuit_class} | {types}"
+            )
+
+    click.echo(f"\nClassified: {added} added, {skipped} skipped (already in DB)")
+
+    if not dry_run and added > 0:
+        from datetime import UTC, datetime
+
+        database.generated_at = datetime.now(UTC)
+        save_database(database, output_path)
+        click.echo(f"Saved {len(database.designs)} design(s) to {output_path}")

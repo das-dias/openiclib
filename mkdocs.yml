@@ -13,7 +13,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Catalog: catalog.md
+  - Library: library.md
   - Stats: stats.md
   - Technologies: technologies.md
   - Examples: examples.md
@@ -40,8 +40,6 @@ plugins:
 
 markdown_extensions:
   admonition:
-  codehilite:
-  fenced_code:
   footnotes:
   extra:
   pymdownx.blocks.details:

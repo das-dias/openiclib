@@ -28,6 +28,7 @@ class ClassifiedBy(StrEnum):
     LLM_GITHUB_MODELS = "llm-github-models"
     LLM_CLAUDE = "llm-claude"
     LLM_OLLAMA = "llm-ollama"
+    KEYWORD = "keyword"
 
 
 class Design(BaseModel):

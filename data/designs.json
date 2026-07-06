@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2025-05-11T00:00:00Z",
+  "generated_at": "2026-07-06T13:34:50.415811Z",
   "designs": [
     {
       "id": "ihp-160ghz-lna",
@@ -11,7 +11,9 @@
       "repo_name": "TO_Apr2025",
       "pdk": "ihp130sg",
       "circuit_class": "analog",
-      "circuit_type": ["LNA"],
+      "circuit_type": [
+        "LNA"
+      ],
       "silicon_proven": true,
       "specifications": {
         "bandwidth": "146-173 GHz",
@@ -19,7 +21,12 @@
         "peak_gain": "12.5 dB @ 157 GHz",
         "input_p1db": "-11.4 dBm @ 160 GHz"
       },
-      "tags": ["mm-wave", "D-band", "BiCMOS", "tapeout-apr2025"],
+      "tags": [
+        "mm-wave",
+        "D-band",
+        "BiCMOS",
+        "tapeout-apr2025"
+      ],
       "classified_by": "manual",
       "classified_at": "2025-05-11T00:00:00Z",
       "local_path": "pdks/ihp/160GHz_LNA",
@@ -34,18 +41,3392 @@
       "repo_name": "TO_Apr2025",
       "pdk": "ihp130sg",
       "circuit_class": "analog",
-      "circuit_type": ["TIA"],
+      "circuit_type": [
+        "TIA"
+      ],
       "silicon_proven": true,
       "specifications": {
         "bandwidth": "DC to 40 GHz",
         "input_noise_density": "~9.5 pA/√Hz",
         "topology": "single-ended"
       },
-      "tags": ["broadband", "optical", "BiCMOS", "tapeout-apr2025"],
+      "tags": [
+        "broadband",
+        "optical",
+        "BiCMOS",
+        "tapeout-apr2025"
+      ],
       "classified_by": "manual",
       "classified_at": "2025-05-11T00:00:00Z",
       "local_path": "pdks/ihp/40_GHZ_LOW_NOISE_TIA",
       "readme_excerpt": "This repository contains the design files for a DC to 40 GHz Single Ended Transimpedance Amplifier (TIA) optimized for low input-referred current noise density. The final design achieves ~9.5 pA/√Hz."
+    },
+    {
+      "id": "efabless-caravel",
+      "name": "Caravel",
+      "summary": "Caravel is a standard SoC template with on chip resources to control and read/write operations from a user-dedicated space.",
+      "source_url": "https://github.com/efabless/caravel",
+      "repo_owner": "efabless",
+      "repo_name": "caravel",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "caravel",
+        "magic",
+        "openram",
+        "openroad",
+        "picorv32",
+        "sky130",
+        "vexriscv",
+        "yosys"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.077264Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-caravel-mpw-one",
+      "name": "Caravel Mpw One",
+      "summary": "Caravel is a standard SoC hardness with on chip resources to control and read/write operations from a user-dedicated space.",
+      "source_url": "https://github.com/efabless/caravel_mpw-one",
+      "repo_owner": "efabless",
+      "repo_name": "caravel_mpw-one",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "caravel",
+        "magic",
+        "openram",
+        "openroad",
+        "picorv32",
+        "sky130",
+        "yosys",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.078731Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shontaware-sram-sky130",
+      "name": "Sram Sky130",
+      "summary": "Design of 1024x32 SRAM (32Kbits) using OpenRAM and SKY130 PDKs with operating voltage of 1.8V and access time < 2.5ns",
+      "source_url": "https://github.com/ShonTaware/SRAM_SKY130",
+      "repo_owner": "ShonTaware",
+      "repo_name": "SRAM_SKY130",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "openram",
+        "sky130",
+        "sram-memories"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.080497Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "acmmodel-acm-mosfet-models",
+      "name": "Acm Mosfet Models",
+      "summary": "A simple MOSFET model with only 5-DC-parameters for circuit simulation",
+      "source_url": "https://github.com/ACMmodel/ACM-MOSFET-models",
+      "repo_owner": "ACMmodel",
+      "repo_name": "ACM-MOSFET-models",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "circuitsimulation",
+        "gf180mcu",
+        "icdesign",
+        "ihp",
+        "mosfet",
+        "open-source",
+        "sky130",
+        "transistor-modeling",
+        "verilog-a"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.082249Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chriszonghaoli-sky130-ldo-rl",
+      "name": "Sky130 Ldo Rl",
+      "summary": "This repo contains the code that runs RL+GNN to optimize LDOs in SKY130 process.",
+      "source_url": "https://github.com/ChrisZonghaoLi/sky130_ldo_rl",
+      "repo_owner": "ChrisZonghaoLi",
+      "repo_name": "sky130_ldo_rl",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "LDO"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-circuit",
+        "circuit",
+        "ddpg",
+        "gcn",
+        "gnn",
+        "ldo",
+        "optimization",
+        "rgcn",
+        "rl",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.083919Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "w32agobot-sky130-sar-adc",
+      "name": "Sky130 Sar Adc",
+      "summary": "Fully-differential asynchronous non-binary 12-bit SAR-ADC",
+      "source_url": "https://github.com/w32agobot/SKY130_SAR-ADC",
+      "repo_owner": "w32agobot",
+      "repo_name": "SKY130_SAR-ADC",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "ADC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "adc",
+        "master-thesis",
+        "sky130",
+        "skywater"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.084952Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "jakobrat-ralf",
+      "name": "Ralf",
+      "summary": "Reinforcement learning assisted analog layout design flow.",
+      "source_url": "https://github.com/JakobRat/RALF",
+      "repo_owner": "JakobRat",
+      "repo_name": "RALF",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "eda",
+        "magic",
+        "placement",
+        "ppo",
+        "reinforcement-learning",
+        "routing",
+        "simulated-annealing",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.086877Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "google-skywater-pdk-libs-sky130-fd-bd-sram",
+      "name": "Skywater Pdk Libs Sky130 Fd Bd Sram",
+      "summary": "SRAM build space for SKY130 provided by SkyWater.",
+      "source_url": "https://github.com/google/skywater-pdk-libs-sky130_fd_bd_sram",
+      "repo_owner": "google",
+      "repo_name": "skywater-pdk-libs-sky130_fd_bd_sram",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "eda",
+        "ic",
+        "integrated-circuits",
+        "silcon",
+        "sky130",
+        "sram"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.088072Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "essenceia-blake2-asic",
+      "name": "Blake2 Asic",
+      "summary": "SKY130A implementatoin of the Blake2s hash algorithm",
+      "source_url": "https://github.com/Essenceia/blake2_asic",
+      "repo_owner": "Essenceia",
+      "repo_name": "blake2_asic",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "blake2s",
+        "c",
+        "fpga",
+        "rp2040",
+        "sky130",
+        "tiny-tapeout",
+        "verilog",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.088599Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "stineje-sky130rhbdlib",
+      "name": "Sky130Rhbdlib",
+      "summary": "Open-source RHBD (Radiation Hardened by Design)  Standard-Cell Library for SKY130",
+      "source_url": "https://github.com/stineje/sky130RHBDlib",
+      "repo_owner": "stineje",
+      "repo_name": "sky130RHBDlib",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "cells",
+        "radiation",
+        "sky130",
+        "standard",
+        "systemverilog",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.090333Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shalan-ms-qspi-xip-cache",
+      "name": "Ms Qspi Xip Cache",
+      "summary": "AHB-Lite Quad I/O SPI Flash memory controller with direct mapped cache and support for XiP",
+      "source_url": "https://github.com/shalan/MS_QSPI_XIP_CACHE",
+      "repo_owner": "shalan",
+      "repo_name": "MS_QSPI_XIP_CACHE",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "ahb-lite",
+        "asic",
+        "ip",
+        "qspi",
+        "qspi-flash",
+        "sky130",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.090882Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chennakeshavadasa-low-dropout-voltage-regulator-ldo-using-sky130pdk",
+      "name": "Low Dropout Voltage Regulator Ldo Using Sky130Pdk",
+      "summary": "Design of LDO using open source SKY130PDK",
+      "source_url": "https://github.com/chennakeshavadasa/Low-dropout-Voltage-Regulator-LDO-using-SKY130PDK",
+      "repo_owner": "chennakeshavadasa",
+      "repo_name": "Low-dropout-Voltage-Regulator-LDO-using-SKY130PDK",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "LDO",
+        "Regulator"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "ldo",
+        "pmic",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.091404Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chennakeshavadasa-miller-compensated-two-stage-opamp-using-sky130pdk",
+      "name": "Miller Compensated Two Stage Opamp Using Sky130Pdk",
+      "summary": "Design of miller compensated 2 stage opamp using open source SKY130PDK",
+      "source_url": "https://github.com/chennakeshavadasa/Miller-Compensated-Two-stage-OPAMP-using-SKY130PDK",
+      "repo_owner": "chennakeshavadasa",
+      "repo_name": "Miller-Compensated-Two-stage-OPAMP-using-SKY130PDK",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "OTA",
+        "Op-Amp"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "ota",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.091941Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "michaelk99-sky130-ct-dsm",
+      "name": "Sky130 Ct Dsm",
+      "summary": "A case study of a continuous-time Delta-Sigma modulator including system-level simulations/design of the CT-DSM, circuit-design of the front-end Gm-cell and a mixed-signal simulation w/ Ngspice.",
+      "source_url": "https://github.com/michaelk99/SKY130_CT-DSM",
+      "repo_owner": "michaelk99",
+      "repo_name": "SKY130_CT-DSM",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "ADC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "adc",
+        "delta-sigma",
+        "master-thesis",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.094143Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "pmicgen-pmicgen",
+      "name": "Pmicgen",
+      "summary": "Automated generation of a PMIC",
+      "source_url": "https://github.com/pmicgen/pmicgen",
+      "repo_owner": "pmicgen",
+      "repo_name": "pmicgen",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "icdesign",
+        "jupyter",
+        "python",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.095678Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "psr0001-esim-hackathon",
+      "name": "Esim Hackathon",
+      "summary": "Mixed Signal Circuit Design and Simulation Marathon under very Good category  Article: https://www.linkedin.com/pulse/mixed-signal-simulation-marathon-using-esim-sky130-kannan-moudgalya/?trackingId=PLrgw35VThqQ5QB",
+      "source_url": "https://github.com/PSR0001/eSim_hackathon",
+      "repo_owner": "PSR0001",
+      "repo_name": "eSim_hackathon",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "electronics",
+        "esim",
+        "esim-design",
+        "fpga",
+        "ic",
+        "simulation",
+        "sky130",
+        "verilog",
+        "vhdl"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.098616Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ridvanumaz-2ac-folded-cascode-ota-with-sky130-pdk",
+      "name": "2Ac Folded Cascode Ota With Sky130 Pdk",
+      "summary": "A folded-cascode OTA with 3.3V power supply and 54.27 dB DC gain with 66.8MHz unity frequency",
+      "source_url": "https://github.com/ridvanumaz/2AC_Folded-Cascode-OTA-with-SKY130-PDK",
+      "repo_owner": "ridvanumaz",
+      "repo_name": "2AC_Folded-Cascode-OTA-with-SKY130-PDK",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "OTA",
+        "Op-Amp"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "folded-cascode",
+        "integrated-circuits",
+        "opamp",
+        "ota",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.100863Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "algofoogle-tt08-vga-fun",
+      "name": "Tt08 Vga Fun",
+      "summary": "Attempt at 24-bit (RGB888) VGA DAC",
+      "source_url": "https://github.com/algofoogle/tt08-vga-fun",
+      "repo_owner": "algofoogle",
+      "repo_name": "tt08-vga-fun",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "DAC"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "asic",
+        "digital-to-analog-converter",
+        "fpga",
+        "sky130",
+        "tinytapeout",
+        "tt08",
+        "vga",
+        "vga-driver",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.103058Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "algofoogle-tt07-raybox-zero",
+      "name": "Tt07 Raybox Zero",
+      "summary": "TT07 resub of tt04-raybox-zero \"3D\" VGA ray caster demo (like Wolf3D)",
+      "source_url": "https://github.com/algofoogle/tt07-raybox-zero",
+      "repo_owner": "algofoogle",
+      "repo_name": "tt07-raybox-zero",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "3d",
+        "asic",
+        "fpga",
+        "game",
+        "gpu",
+        "graphics",
+        "ray-casting",
+        "raycasting",
+        "retro",
+        "sky130",
+        "tiny-tapeout",
+        "tinytapeout",
+        "tt07",
+        "verilog",
+        "vga",
+        "vga-controller",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.103645Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "paramsaini87-fir-filter-gds2-flow",
+      "name": "Fir Filter Gds2 Flow",
+      "summary": "Complete RTL-to-GDSII flow for 32-tap FIR filter on SKY130 130nm — 33% fewer cells than OpenLane, formally verified (SAT proof), DRC/LVS clean",
+      "source_url": "https://github.com/paramsaini87/fir-filter-gds2-flow",
+      "repo_owner": "paramsaini87",
+      "repo_name": "fir-filter-gds2-flow",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Filter"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "digital-design",
+        "eda",
+        "fir-filter",
+        "formal-verification",
+        "rtl-to-gds",
+        "silicon-design",
+        "sky130",
+        "synthesis",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.104283Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "wulffern-rply-bias-sky130nm",
+      "name": "Rply Bias Sky130Nm",
+      "summary": "PTAT bias current source for sky130nm",
+      "source_url": "https://github.com/wulffern/rply_bias_sky130nm",
+      "repo_owner": "wulffern",
+      "repo_name": "rply_bias_sky130nm",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "Bandgap"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "bandgap",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.104783Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "tanmay707-nasscom-vsd-soc",
+      "name": "Nasscom Vsd Soc",
+      "summary": "This Repository consists of the learnings and simulations using OpenLANE under the workshop by VSD entitled as SOC Design and Planning Workshop",
+      "source_url": "https://github.com/Tanmay707/NASSCOM-VSD-SOC",
+      "repo_owner": "Tanmay707",
+      "repo_name": "NASSCOM-VSD-SOC",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "dockerfile",
+        "html",
+        "linux",
+        "magic",
+        "openlane",
+        "sky130",
+        "tcl",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.105351Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "revenantx86-tiny-sar",
+      "name": "Tiny Sar",
+      "summary": "8-bit Succesive approximation register analog to digital converter (SAR-ADC)",
+      "source_url": "https://github.com/Revenantx86/tiny-SAR",
+      "repo_owner": "Revenantx86",
+      "repo_name": "tiny-SAR",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "ADC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "mixed-signal-chips",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.106940Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "junior-jl-cs-amp-sky130",
+      "name": "Cs Amp Sky130",
+      "summary": "Design of a common source amplifier using Skywater sky130 technology",
+      "source_url": "https://github.com/junior-jl/cs-amp-sky130",
+      "repo_owner": "junior-jl",
+      "repo_name": "cs-amp-sky130",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "amplifier-design",
+        "magic-vlsi",
+        "simulation",
+        "sky130",
+        "spice"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.108337Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shyamrazesh-digital-vlsi-soc-design-and-planning",
+      "name": "Digital Vlsi Soc Design And Planning",
+      "summary": "2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organized by VSD in collaboration with NASSCOM (Advanced Physical Design using OpenLANE /Sky130)",
+      "source_url": "https://github.com/ShyamRazesh/DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING",
+      "repo_owner": "ShyamRazesh",
+      "repo_name": "DIGITAL-VLSI-SOC-DESIGN-AND-PLANNING",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "open-source",
+        "openlane-flow",
+        "sky130",
+        "vlsi-physical-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.108968Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "saivarshithm-cmos-circuit-design-and-simulation-using-sky130",
+      "name": "Cmos Circuit Design And Simulation Using Sky130",
+      "summary": "CMOS circuit design and SPICE simulation study covering NMOS behavior, inverter VTC, noise margins, and robustness analysis.",
+      "source_url": "https://github.com/saivarshithm/CMOS-Circuit-Design-and-Simulation-Using-SKY130",
+      "repo_owner": "saivarshithm",
+      "repo_name": "CMOS-Circuit-Design-and-Simulation-Using-SKY130",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "circuit-design",
+        "cmos",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.110060Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "romeruu-dev-ttsky-tetrahedral-oscillator",
+      "name": "Ttsky Tetrahedral Oscillator",
+      "summary": "This project implements a tetrahedral oscillator inspired by the paper “Analysis and Design of a Tetrahedral Oscillator” by Richelle L. Smith and Thomas H. Lee. The oscillator is built from coupled inverter pairs, and its operating frequency is tuned by adding capacitive loads to the internal nodes.",
+      "source_url": "https://github.com/ROMERUU-dev/ttsky-tetrahedral-oscillator",
+      "repo_owner": "ROMERUU-dev",
+      "repo_name": "ttsky-tetrahedral-oscillator",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "Oscillator"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "analog-ic",
+        "cmos",
+        "custom-layout",
+        "gds",
+        "lef",
+        "magic-vlsi",
+        "mixed-signal",
+        "ngspice",
+        "open-source-silicon",
+        "oscillator",
+        "ring-oscillator",
+        "sky130",
+        "spice",
+        "tiny-tapeout",
+        "xschem",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.110864Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "puxina-open-vlsi",
+      "name": "Open Vlsi",
+      "summary": "Repository for open-source tools to VLSI design",
+      "source_url": "https://github.com/puxina/Open-VLSI",
+      "repo_owner": "puxina",
+      "repo_name": "Open-VLSI",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "digital-circuit-design",
+        "gf180",
+        "microelectronics",
+        "sky130",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.111933Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "muditbhargava66-neoram",
+      "name": "Neoram",
+      "summary": "Advanced SRAM Controller with ECC Support for Sky130 Process - Production-Ready Multi-Port Memory System.",
+      "source_url": "https://github.com/muditbhargava66/NeoRAM",
+      "repo_owner": "muditbhargava66",
+      "repo_name": "NeoRAM",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "cocotb",
+        "ecc-memory",
+        "fpga",
+        "memory-controller",
+        "multi-port-memory",
+        "open-source-hardware",
+        "pytest",
+        "sky130",
+        "sram-controller",
+        "systemverilog",
+        "verification",
+        "vlsi-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.113862Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "mummanajagadeesh-fir-accel-caravel-soc",
+      "name": "Fir Accel Caravel Soc",
+      "summary": "Mixed-signal FIR accelerator SoC on Caravel/Sky130A — CIC decimator, 8-tap programmable FIR filter, PWM DAC, Wishbone CSR",
+      "source_url": "https://github.com/Mummanajagadeesh/fir-accel-caravel-soc",
+      "repo_owner": "Mummanajagadeesh",
+      "repo_name": "fir-accel-caravel-soc",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "DAC",
+        "Filter",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "caravel",
+        "dsp",
+        "openlane",
+        "rtl",
+        "sky130",
+        "verilog",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.114996Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "samizo-aitl-openlane2-sram",
+      "name": "Openlane2 Sram",
+      "summary": "OpenLane2 example project for integrating an SRAM hard macro and generating GDS.",
+      "source_url": "https://github.com/Samizo-AITL/openlane2-sram",
+      "repo_owner": "Samizo-AITL",
+      "repo_name": "openlane2-sram",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "eda",
+        "gds",
+        "hard-macro",
+        "openlane",
+        "openlane2",
+        "openroad",
+        "physical-design",
+        "sky130",
+        "sram",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.116606Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "additrejo-ieee-summer-school-on-semiconductor-devices-integrated-circuits-2025",
+      "name": "Ieee Summer School On Semiconductor Devices Integrated Circuits 2025",
+      "summary": "IEEE Summer School on Semiconductor Devices & Integrated Circuits 2025 por Nanociencias y Micro y Nanotecnologías del Instituto Politécnico Nacional",
+      "source_url": "https://github.com/Additrejo/IEEE-Summer-School-on-Semiconductor-Devices-Integrated-Circuits-2025",
+      "repo_owner": "Additrejo",
+      "repo_name": "IEEE-Summer-School-on-Semiconductor-Devices-Integrated-Circuits-2025",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "at-learn",
+        "at-semiconductores",
+        "at-semiconductors",
+        "electronics",
+        "electrotlalli",
+        "semiconductor",
+        "silvaco",
+        "simulation",
+        "sky130"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.117242Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ridash2005-risc-v-multiprecision-processor-core",
+      "name": "Risc V Multiprecision Processor Core",
+      "summary": "A synthesizable RISC-V processor ecosystem in SystemVerilog. Features 32/64-bit single-cycle and 5-stage pipelined architectures, ASIC-proven on Sky130.",
+      "source_url": "https://github.com/ridash2005/RISC-V_MultiPrecision_Processor_Core",
+      "repo_owner": "ridash2005",
+      "repo_name": "RISC-V_MultiPrecision_Processor_Core",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "computer-architecture",
+        "cpu-design",
+        "fpga",
+        "microprocessor",
+        "openlane",
+        "pipeline-architecture",
+        "risc-v",
+        "rtl-design",
+        "sky130",
+        "systemverilog",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.119179Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "fguzman82-upb-natalius-soc",
+      "name": "Upb Natalius Soc",
+      "summary": "8 bit RISC Processor for SKY 130nm process",
+      "source_url": "https://github.com/fguzman82/upb_natalius_soc",
+      "repo_owner": "fguzman82",
+      "repo_name": "upb_natalius_soc",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "efabless",
+        "processor-architecture",
+        "risc",
+        "sky130",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.120231Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "vlsi-shubh-nocrouter-rtl2gdsii",
+      "name": "Nocrouter Rtl2Gdsii",
+      "summary": "A complete 1×3 NoC router implemented from RTL to GDSII using the Sky130A PDK. Includes full functional verification, synthesis (Yosys), and physical design using OpenLane/OpenROAD, culminating in a signoff-clean GDS layout.",
+      "source_url": "https://github.com/VLSI-Shubh/NoCRouter-RTL2GDSII",
+      "repo_owner": "VLSI-Shubh",
+      "repo_name": "NoCRouter-RTL2GDSII",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "chip-design",
+        "network-on-chip",
+        "router",
+        "rtl2gds",
+        "sky130",
+        "soc-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.123152Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "hemachandhran-open-source-asic-design-rtl-to-gdsii",
+      "name": "Open Source Asic Design Rtl To Gdsii",
+      "summary": "Hands-on open-source ASIC design portfolio documenting the complete RTL-to-GDSII flow, SoC verification, and gate-level simulation using OpenLane, OpenROAD, SKY130, Caravel, and VSDSquadron.",
+      "source_url": "https://github.com/hemachandhran/Open-Source-ASIC-Design-RTL-to-GDSII",
+      "repo_owner": "hemachandhran",
+      "repo_name": "Open-Source-ASIC-Design-RTL-to-GDSII",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "caravel",
+        "gls",
+        "openlane",
+        "openroad",
+        "orfs",
+        "physical-design",
+        "risc-v",
+        "rtl",
+        "rtl-gds",
+        "sky130",
+        "soc",
+        "tcl",
+        "vsdsquadron"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.123772Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shekharshwetank-risc-v-reference-soc-tapeout-program-phase-2",
+      "name": "Risc V Reference Soc Tapeout Program Phase 2",
+      "summary": "RISC-V Reference SoC Design and Tapeout Program Phase 2 personal documentation",
+      "source_url": "https://github.com/ShekharShwetank/RISC-V_Reference_SoC_Tapeout_Program_Phase_2",
+      "repo_owner": "ShekharShwetank",
+      "repo_name": "RISC-V_Reference_SoC_Tapeout_Program_Phase_2",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Reference",
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-design",
+        "caravel",
+        "risc-v",
+        "scl180nm",
+        "sky130",
+        "synopsys",
+        "system-on-chip-design",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.125539Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "essenceia-analog-sky26a",
+      "name": "Analog Sky26A",
+      "summary": "Analog experiements, targetting sky26a, double oscillators",
+      "source_url": "https://github.com/Essenceia/analog_sky26a",
+      "repo_owner": "Essenceia",
+      "repo_name": "analog_sky26a",
+      "pdk": "skywater130",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "Oscillator"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog",
+        "asic",
+        "chip",
+        "klayout",
+        "magic",
+        "oscillator",
+        "sky130",
+        "xschem"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.126058Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "arudeep15-nasscom-vsd-soc",
+      "name": "Nasscom Vsd Soc",
+      "summary": "This Repository consists of the learnings and simulations using OpenLANE under the workshop by VSD entitled as SOC Design and Planning Workshop.",
+      "source_url": "https://github.com/arudeep15/NASSCOM-VSD-SOC",
+      "repo_owner": "arudeep15",
+      "repo_name": "NASSCOM-VSD-SOC",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "dockerfile",
+        "html",
+        "linux",
+        "magic",
+        "openlane",
+        "sky130",
+        "tcl-scripts",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.127189Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "kudumyashwanth-aurora-v1",
+      "name": "Aurora V1",
+      "summary": "Aurora v1 — a complete RISC-V + tensor-accelerator AI SoC taken from RTL to signed-off GDSII with open-source tools (Sky130B). Timing MET, DRC=1, LVS device-match.",
+      "source_url": "https://github.com/kudumyashwanth/aurora-v1",
+      "repo_owner": "kudumyashwanth",
+      "repo_name": "aurora-v1",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "chip-design",
+        "gdsii",
+        "hardware-design",
+        "openlane",
+        "openroad",
+        "riscv",
+        "rtl-to-gdsii",
+        "sky130",
+        "soc",
+        "tensor-accelerator",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.127842Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "essenceia-systolic-array-with-dft-v2",
+      "name": "Systolic Array With Dft V2",
+      "summary": "IHP 130nm ASIC tapeout of a 2x2 bfloat16 matrix matrix multiplication with DFT infrastructure. Iteration on the previous accelerator taped out on GF180.",
+      "source_url": "https://github.com/Essenceia/Systolic_Array_with_DFT_v2",
+      "repo_owner": "Essenceia",
+      "repo_name": "Systolic_Array_with_DFT_v2",
+      "pdk": "ihp130sg",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "130nm",
+        "asic",
+        "bfloat",
+        "bfloat16",
+        "ihp-sg13g2",
+        "ihs",
+        "rtl",
+        "sg13g2",
+        "systolic-arrays",
+        "verilog",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.129734Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "cdta-dmn-ihp-mcu2972",
+      "name": "Ihp Mcu2972",
+      "summary": "An open-source 32-bit RISC-V MCU designed for IHP SG13G2 130nm BiCMOS technology. Features a PicoRV32 core, QSPI XIP, and a rich peripheral set for low-power IoT and embedded control.",
+      "source_url": "https://github.com/CDTA-DMN/IHP__MCU2972",
+      "repo_owner": "CDTA-DMN",
+      "repo_name": "IHP__MCU2972",
+      "pdk": "ihp130sg",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "ihp-sg13g2",
+        "opensourcehardware",
+        "riscv",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.131422Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "pa1mantri-current-starved-vco-ihp",
+      "name": "Current Starved Vco Ihp",
+      "summary": "Voltage Controlled Oscillator that produces 1GHz output frequency at voltage 3.3V using IHP PDK as a part of eSim Marathon",
+      "source_url": "https://github.com/Pa1mantri/Current_Starved_VCO_IHP",
+      "repo_owner": "Pa1mantri",
+      "repo_name": "Current_Starved_VCO_IHP",
+      "pdk": "ihp130sg",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "VCO",
+        "Oscillator"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "esim",
+        "fossee",
+        "ihp-sg13g2",
+        "kvco",
+        "ring-oscillator",
+        "vco",
+        "voltage-controlled-oscillator"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.132523Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "omaralani1978-silicoweave-mmwave-ip",
+      "name": "Silicoweave Mmwave Ip",
+      "summary": "Low-power mmWave IP portfolio on IHP SG13G2 SiGe BiCMOS — V-band LNA, VCO, and PA driver",
+      "source_url": "https://github.com/OmarAlani1978/SilicoWeave-mmWave-IP",
+      "repo_owner": "OmarAlani1978",
+      "repo_name": "SilicoWeave-mmWave-IP",
+      "pdk": "ihp130sg",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "LNA",
+        "VCO",
+        "Power Amplifier"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "analog-design",
+        "asic",
+        "ihp-sg13g2",
+        "klayout",
+        "mmwave",
+        "ngspice",
+        "open-source-silicon",
+        "rf-design",
+        "sige-bicmos",
+        "xschem"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.133100Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "google-globalfoundries-pdk-ip-gf180mcu-fd-ip-sram",
+      "name": "Globalfoundries Pdk Ip Gf180Mcu Fd Ip Sram",
+      "summary": "SRAM macros created for the GF180MCU provided by GlobalFoundries.",
+      "source_url": "https://github.com/google/globalfoundries-pdk-ip-gf180mcu_fd_ip_sram",
+      "repo_owner": "google",
+      "repo_name": "globalfoundries-pdk-ip-gf180mcu_fd_ip_sram",
+      "pdk": "gf180",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "180nm",
+        "asic",
+        "eda",
+        "gf180mcu",
+        "globalfoundries",
+        "ip",
+        "openroad",
+        "pdk",
+        "sram"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.135810Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "google-globalfoundries-pdk-libs-gf180mcu-fd-bd-sram",
+      "name": "Globalfoundries Pdk Libs Gf180Mcu Fd Bd Sram",
+      "summary": "SRAM build space for the GF180MCU provided by GlobalFoundries.",
+      "source_url": "https://github.com/google/globalfoundries-pdk-libs-gf180mcu_fd_bd_sram",
+      "repo_owner": "google",
+      "repo_name": "globalfoundries-pdk-libs-gf180mcu_fd_bd_sram",
+      "pdk": "gf180",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SRAM"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "180nm",
+        "asic",
+        "eda",
+        "gf180mcu",
+        "globalfoundries",
+        "openroad",
+        "pdk",
+        "sram"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.137462Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "splinedrive-gf180mcu-kianv-rv32ima-sv32",
+      "name": "Gf180Mcu Kianv Rv32Ima Sv32",
+      "summary": "KianV GF180 ASIC runs ulinux, linux and XV6",
+      "source_url": "https://github.com/splinedrive/gf180mcu-kianv-rv32ima-sv32",
+      "repo_owner": "splinedrive",
+      "repo_name": "gf180mcu-kianv-rv32ima-sv32",
+      "pdk": "gf180",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "gf180mcu",
+        "librelane",
+        "llinux",
+        "riscv",
+        "system-on-chip"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.138571Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "essenceia-ethernet-switch",
+      "name": "Ethernet Switch",
+      "summary": "Open source sillicon for a 100Mbps 3 port unmanaged cut-though ethernet switch",
+      "source_url": "https://github.com/Essenceia/ethernet_switch",
+      "repo_owner": "Essenceia",
+      "repo_name": "ethernet_switch",
+      "pdk": "gf180",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "100mbps",
+        "asic",
+        "ethernet",
+        "gf180mcu",
+        "open-source",
+        "switch"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.139116Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "evezor-wafer-space-docker-based-starter-kit",
+      "name": "Wafer Space Docker Based Starter Kit",
+      "summary": "Beginner-friendly, Docker-based starter kit for designing a GF180MCU chip from RTL to a manufacturable GDSII — simulate, verify, and harden a working example, then make it yours and submit it to a wafer.space shuttle.",
+      "source_url": "https://github.com/evezor/wafer_space_docker_based_starter_kit",
+      "repo_owner": "evezor",
+      "repo_name": "wafer_space_docker_based_starter_kit",
+      "pdk": "gf180",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-verification",
+        "docker-compose",
+        "eda",
+        "gds",
+        "gdsii",
+        "gf180",
+        "gf180mcu",
+        "librelane",
+        "open-source-hardware",
+        "open-source-silicon",
+        "openroad",
+        "systemverilog-hdl",
+        "tapeout",
+        "tepeout-tools",
+        "wafer-space"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.142370Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "hughperkins-verigpu",
+      "name": "Verigpu",
+      "summary": "OpenSource GPU, in Verilog, loosely based on RISC-V ISA",
+      "source_url": "https://github.com/hughperkins/VeriGPU",
+      "repo_owner": "hughperkins",
+      "repo_name": "VeriGPU",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "gpu",
+        "gpu-acceleration",
+        "hardware-designs",
+        "machine-learning",
+        "risc-v",
+        "risc-v-assembly",
+        "verification",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.145659Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-cores-veer-eh1",
+      "name": "Cores Veer Eh1",
+      "summary": "VeeR EH1 core",
+      "source_url": "https://github.com/chipsalliance/Cores-VeeR-EH1",
+      "repo_owner": "chipsalliance",
+      "repo_name": "Cores-VeeR-EH1",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "ahb-lite",
+        "asic-design",
+        "axi4",
+        "fpga",
+        "fusesoc",
+        "open-source-hardware",
+        "processor",
+        "risc",
+        "risc-v",
+        "riscv",
+        "riscv32",
+        "rtl",
+        "veer",
+        "verilator",
+        "western-digital"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.146208Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-cores-veer-el2",
+      "name": "Cores Veer El2",
+      "summary": "VeeR EL2 Core",
+      "source_url": "https://github.com/chipsalliance/Cores-VeeR-EL2",
+      "repo_owner": "chipsalliance",
+      "repo_name": "Cores-VeeR-EL2",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "ahb-lite",
+        "asic-design",
+        "axi4",
+        "el2",
+        "fpga",
+        "fusesoc",
+        "open-source-hardware",
+        "processor",
+        "risc-v",
+        "riscv",
+        "riscv32",
+        "rtl",
+        "verilator",
+        "western-digital"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.149063Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "dpretet-axi-crossbar",
+      "name": "Axi Crossbar",
+      "summary": "Parametric AXI4 crossbar in SystemVerilog",
+      "source_url": "https://github.com/dpretet/axi-crossbar",
+      "repo_owner": "dpretet",
+      "repo_name": "axi-crossbar",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "amba",
+        "arm",
+        "asic",
+        "asic-design",
+        "axi4",
+        "axi4-full",
+        "axi4-lite",
+        "axi4-protocol",
+        "crossbar",
+        "fpga",
+        "fpga-soc",
+        "interconnect",
+        "monodraw",
+        "processor",
+        "riscv",
+        "riscv32",
+        "riscv64",
+        "soc",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.150168Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "cpc-openasip",
+      "name": "Openasip",
+      "summary": "Open Application-Specific Instruction Set processor tools (OpenASIP)",
+      "source_url": "https://github.com/cpc/openasip",
+      "repo_owner": "cpc",
+      "repo_name": "openasip",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "fpga",
+        "hardware-accelerators",
+        "hardware-designs"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.150694Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "abdelazeem201-design-and-asic-implementation-of-32-point-fft-processor",
+      "name": "Design And Asic Implementation Of 32 Point Fft Processor",
+      "summary": "I present a novel pipelined fast Fourier transform (FFT) architecture which is capable of producing the output sequence in normal order. A single-path delay commutator processing element (SDC PE) has been proposed for the first time. It saves a complex adder compared with the typical radix-2 butterfly unit. The new pipelined architecture can be built using the proposed processing element. The proposed architecture can lead to 100% hardware utilization and 50% reduction in the overall number of a",
+      "source_url": "https://github.com/abdelazeem201/Design-and-ASIC-Implementation-of-32-Point-FFT-Processor",
+      "repo_owner": "abdelazeem201",
+      "repo_name": "Design-and-ASIC-Implementation-of-32-Point-FFT-Processor",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-design",
+        "asic-verification",
+        "fft",
+        "fpga",
+        "rtl",
+        "soc",
+        "synthesis",
+        "verilog",
+        "vhdl"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.154890Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "vardhansuroshi-vlsi-asic-design-flow",
+      "name": "Vlsi Asic Design Flow",
+      "summary": "This repository is dedicated to VLSI ASIC Design Flow using open-source tools! Here, we embark on a journey that starts with specifications, RTL DV, Synthesis, Physical Design, Signoff and Finally Tape-It-Out",
+      "source_url": "https://github.com/VardhanSuroshi/VLSI-ASIC-Design-Flow",
+      "repo_owner": "VardhanSuroshi",
+      "repo_name": "VLSI-ASIC-Design-Flow",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "openlane",
+        "opensource",
+        "risc-v",
+        "rtl",
+        "skywater",
+        "vlsi",
+        "vlsi-design",
+        "vlsi-physical-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.157110Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "lampro-mellon-quasar",
+      "name": "Quasar",
+      "summary": "Quasar 2.0: Chisel equivalent of SweRV-EL2",
+      "source_url": "https://github.com/Lampro-Mellon/Quasar",
+      "repo_owner": "Lampro-Mellon",
+      "repo_name": "Quasar",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "ahb-lite",
+        "asic-design",
+        "asic-verification",
+        "axi4",
+        "chisel",
+        "chisel3",
+        "open-source-hardware",
+        "processor",
+        "riscv",
+        "rtl",
+        "scala",
+        "swerv",
+        "swerv-el2",
+        "verilator"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.157657Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "dpretet-friscv",
+      "name": "Friscv",
+      "summary": "RISCV CPU implementation in SystemVerilog",
+      "source_url": "https://github.com/dpretet/friscv",
+      "repo_owner": "dpretet",
+      "repo_name": "friscv",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-design",
+        "assembler",
+        "axi4",
+        "axi4-protocol",
+        "crossbar",
+        "fpga",
+        "fpga-soc",
+        "risc-v",
+        "riscv",
+        "riscv-cpu",
+        "rv32i",
+        "systemverilog",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.158187Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "meeeeet-rtl-to-gds-implementation-of-serdes",
+      "name": "Rtl To Gds Implementation Of Serdes",
+      "summary": "",
+      "source_url": "https://github.com/meeeeet/RTL-to-GDS-Implementation-of-SerDes",
+      "repo_owner": "meeeeet",
+      "repo_name": "RTL-to-GDS-Implementation-of-SerDes",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SERDES"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "openroad",
+        "rtl2gds",
+        "verilog",
+        "vlsi-physical-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.158689Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "arhamhashmi01-rv32i-pipeline-processor",
+      "name": "Rv32I Pipeline Processor",
+      "summary": "This repository contain the implementaton of RV32I 5-Stage-Pipeline-Processor based on RISC-V ISA and designed on Verilog",
+      "source_url": "https://github.com/arhamhashmi01/rv32i-pipeline-processor",
+      "repo_owner": "arhamhashmi01",
+      "repo_name": "rv32i-pipeline-processor",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "5-stage-pipelined-processor",
+        "asic-design",
+        "chip-design",
+        "computer-architecture",
+        "gtkwave",
+        "hardware-designs",
+        "microprocessor",
+        "pipeline-processor",
+        "risc-v",
+        "rv32i",
+        "rv32i-processor",
+        "rv32im",
+        "verilator",
+        "verilog",
+        "vhdl",
+        "vivado",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.159311Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "kagandikmen-tpu-sv",
+      "name": "Tpu.Sv",
+      "summary": "Anatomy of a powerhouse: SystemVerilog TPU based on Google TPU v1",
+      "source_url": "https://github.com/kagandikmen/TPU.sv",
+      "repo_owner": "kagandikmen",
+      "repo_name": "TPU.sv",
+      "pdk": "unknown",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "ai-acceleration",
+        "ai-processor",
+        "asic",
+        "asic-design",
+        "hardware-acceleration"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.159832Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "anoushkatripathi-nasscom-vsd-soc-design-program",
+      "name": "Nasscom Vsd Soc Design Program",
+      "summary": " In this workshop, we will delve into the process of designing an Application Specific Integrated Circuit (ASIC) from the Register Transfer Level (RTL) to the Graphical Data System (GDS)",
+      "source_url": "https://github.com/AnoushkaTripathi/NASSCOM-VSD-SoC-design-Program",
+      "repo_owner": "AnoushkaTripathi",
+      "repo_name": "NASSCOM-VSD-SoC-design-Program",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "openlane-flow",
+        "rtltogds2"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.161552Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shekharshwetank-risc-v-rtl2gdsii",
+      "name": "Risc V Rtl2Gdsii",
+      "summary": "Learning Path: RISC-V System-on-Chip (SoC) design, from Register Transfer Level (RTL) to a GDSII layout | Complete VLSI design flow using open-source EDA tools.",
+      "source_url": "https://github.com/ShekharShwetank/RISC-V_RTL2GDSII",
+      "repo_owner": "ShekharShwetank",
+      "repo_name": "RISC-V_RTL2GDSII",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-design",
+        "gdsii-flow",
+        "gtkwave",
+        "icarus-verilog",
+        "klayout",
+        "magic",
+        "ngspice",
+        "openlane",
+        "opensource",
+        "risc-v",
+        "rtl",
+        "system-on-chip-design",
+        "vlsi-design",
+        "yosys"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.164590Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "abdelazeem201-leon2",
+      "name": "Leon2",
+      "summary": "The LEON2 is a synthesisable VHDL model of a 32-bit processor conforming to the IEEE-1754 (SPARC V8) architecture.",
+      "source_url": "https://github.com/abdelazeem201/LEON2",
+      "repo_owner": "abdelazeem201",
+      "repo_name": "LEON2",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "arm",
+        "asic",
+        "asic-design",
+        "asic-verification",
+        "fpga",
+        "rtl",
+        "simulation",
+        "soc",
+        "systemverilog",
+        "verilog",
+        "vhdl"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.166336Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "rubinsteina13-sv-i2s-rx-core",
+      "name": "Sv I2S Rx Core",
+      "summary": "Synthesizable SystemVerilog IP-Core of the I2S Receiver",
+      "source_url": "https://github.com/rubinsteina13/SV_I2S_RX_CORE",
+      "repo_owner": "rubinsteina13",
+      "repo_name": "SV_I2S_RX_CORE",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "DAC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "cpld",
+        "fpga",
+        "hdl",
+        "i2s",
+        "i2s-dac",
+        "ip-core",
+        "system-verilog",
+        "systemverilog",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.168017Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "zaneham-voyager-fds",
+      "name": "Voyager Fds",
+      "summary": "The Voyager flight computer on SKY130 silicon. 58 cells. Currently 24 billion km away.",
+      "source_url": "https://github.com/Zaneham/voyager-fds",
+      "repo_owner": "Zaneham",
+      "repo_name": "voyager-fds",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "astronomy",
+        "chip-design",
+        "flight-computer",
+        "hardware-designs",
+        "history",
+        "jpl",
+        "nasa",
+        "new-zealand",
+        "open-hardware",
+        "processor-architecture",
+        "processor-design",
+        "retro-computing",
+        "skywater-sky130",
+        "space",
+        "systemverilog",
+        "voyager"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.168638Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "kethasriramya2912-verilog-rtl-coding",
+      "name": "Verilog Rtl Coding",
+      "summary": "\"Mastering RTL-Coding : From Fundamentals to Advanced Programming Techniques using Verilog,System Verilog and UVM\"",
+      "source_url": "https://github.com/Kethasriramya2912/Verilog-RTL-Coding",
+      "repo_owner": "Kethasriramya2912",
+      "repo_name": "Verilog-RTL-Coding",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "100daysofrtl",
+        "amba",
+        "asic-design",
+        "rtl-coding",
+        "soc",
+        "systemverilog",
+        "uvm",
+        "verilog",
+        "vlsi-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.170031Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ammar-wahidi-npu",
+      "name": "Npu",
+      "summary": "Silicon-proven INT8 systolic NPU (8×8 MAC array) taped out on SkyWater 130nm via LibreLane. Features a custom 32-bit ISA, UART–APB host interface, and fused streaming datapath. Validated on chest X-ray pneumonia detection. Silicon Sprint 2026 — AUC.",
+      "source_url": "https://github.com/Ammar-Wahidi/NPU",
+      "repo_owner": "Ammar-Wahidi",
+      "repo_name": "NPU",
+      "pdk": "skywater130",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "digital-ic-design",
+        "edge-ai",
+        "int8-quantization",
+        "librelane",
+        "medical-ai",
+        "npu",
+        "openroad",
+        "rtl-to-gdsii",
+        "skywater-130nm",
+        "systolic-arrays",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.174142Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "zaneham-ruru",
+      "name": "Ruru",
+      "summary": "The world's first probabilistic processor. Distributions are the data type. Bayesian inference is a machine instruction. 2,237 SKY130 gates.",
+      "source_url": "https://github.com/Zaneham/ruru",
+      "repo_owner": "Zaneham",
+      "repo_name": "ruru",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "Filter"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "bayesian-inference",
+        "chip-design",
+        "kalman-filter",
+        "new-zealand",
+        "open-hardware",
+        "probabilistic-computing",
+        "processor-design",
+        "sensor-fusion",
+        "skywater-sky130",
+        "systemverilog",
+        "uncertainty-quantification"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.174760Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "zaneham-qsim",
+      "name": "Qsim",
+      "summary": "Quantum circuit accelerator on classical silicon. 8 qubits, 238 gates, 200MHz. Because irony is a valid design methodology.",
+      "source_url": "https://github.com/Zaneham/qsim",
+      "repo_owner": "Zaneham",
+      "repo_name": "qsim",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "chip-design",
+        "circuit-simulator",
+        "fpga",
+        "new-zealand",
+        "open-hardware",
+        "quantum-computing",
+        "quantum-gates",
+        "quantum-simulation",
+        "skywater-sky130",
+        "systemverilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.175365Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ezrawolf-tinymoa",
+      "name": "Tinymoa",
+      "summary": "LLM inference SoC",
+      "source_url": "https://github.com/EzraWolf/TinyMOA",
+      "repo_owner": "EzraWolf",
+      "repo_name": "TinyMOA",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "asic-soc",
+        "compute-in-memory",
+        "cpu",
+        "fpga-soc",
+        "risc-v",
+        "riscv",
+        "soc"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.175872Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "mnemocron-tste87",
+      "name": "Tste87",
+      "summary": "MATLAB code for the lab sessions in the \"ASIC for DSP\" course at LiU-ISY",
+      "source_url": "https://github.com/mnemocron/TSTE87",
+      "repo_owner": "mnemocron",
+      "repo_name": "TSTE87",
+      "pdk": "unknown",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "Filter"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "asic-design",
+        "dsp",
+        "filter-theory",
+        "fir-filter",
+        "fpga-design",
+        "signal-processing",
+        "tste87"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.176956Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "aukhalid-evpix-rv32",
+      "name": "Evpix Rv32",
+      "summary": "EVPIX-RV32: 5-Stage Custom RISC-V SoC with Integrated IPU and TinyML Support for Real-Time Edge-Vision AI Acceleration: RTL-to-GDSII Design, Verification, Basys-3 Artix-7 FPGA Prototyping and SkyWater 130-nm CMOS ASIC was implementation",
+      "source_url": "https://github.com/aukhalid/evpix_rv32",
+      "repo_owner": "aukhalid",
+      "repo_name": "evpix_rv32",
+      "pdk": "skywater130",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "asic-verification",
+        "bash-script",
+        "fpga-prototyping",
+        "linux",
+        "makefile",
+        "openroad",
+        "rtl-design",
+        "rtl-to-gdsii",
+        "rtl-verification",
+        "sky130-pdk",
+        "systemverilog",
+        "verilog-hdl",
+        "yosys"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.180576Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "logicbyvini-advanced-digital-logic-lib",
+      "name": "Advanced Digital Logic Lib",
+      "summary": "SystemVerilog ASIC Portfolio: RISC-V SoC Integration, UVM Verification, AI Accelerators & DSP. Full Flow from RTL to GDSII (Cadence).",
+      "source_url": "https://github.com/logicbyvini/advanced-digital-logic-lib",
+      "repo_owner": "logicbyvini",
+      "repo_name": "advanced-digital-logic-lib",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "asic-verification",
+        "axi4",
+        "axi4-lite",
+        "axi4-lite-system-verilog",
+        "axi4-protocol",
+        "cadence-xcelium",
+        "dsp",
+        "genus",
+        "genus-synthesis",
+        "innovus",
+        "neorv32",
+        "risc-v",
+        "riscv32",
+        "soc",
+        "systemverilog",
+        "uvm",
+        "uvm-testbench",
+        "uvm-verification",
+        "xcelium"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.181965Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "rubinsteina13-sv-dsm-core",
+      "name": "Sv Dsm Core",
+      "summary": "Synthesizable SystemVerilog IP-Core of the First-Order Delta-Sigma Modulator",
+      "source_url": "https://github.com/rubinsteina13/SV_DSM_CORE",
+      "repo_owner": "rubinsteina13",
+      "repo_name": "SV_DSM_CORE",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "DAC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "cpld",
+        "dac",
+        "digital-signal-processing",
+        "fpga",
+        "ip-core",
+        "system-verilog",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.183657Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "shahed22-architectural-design-for-bus-interface-connected-with-lfsr",
+      "name": "Architectural Design For Bus Interface Connected With Lfsr",
+      "summary": "bus interface, integrating LFSR’s for streamlined register management. Enabled seamless master-peripheral communication, enhancing system efficiency. Orchestrated comprehensive design stages, yielding a versatile RTL architecture for diverse applications",
+      "source_url": "https://github.com/shahed22/Architectural-Design-for-Bus-interface-connected-with-LFSR",
+      "repo_owner": "shahed22",
+      "repo_name": "Architectural-Design-for-Bus-interface-connected-with-LFSR",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "32-bit",
+        "32bit",
+        "architecture",
+        "asic",
+        "asic-design",
+        "bus-interface",
+        "controlpath",
+        "datapath",
+        "datapath-design",
+        "fsm",
+        "interface",
+        "lfsr",
+        "lfsr-algorithm",
+        "peripherals",
+        "rtl",
+        "soc",
+        "testbench",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.185645Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "silviab24-dlx-processor-portfolio",
+      "name": "Dlx Processor Portfolio",
+      "summary": "Full RTL-to-GDSII implementation of a 32-bit RISC Processor. Features Physical Design (P&R), CTS, and Timing Closure using Synopsys DC & Cadence Innovus.",
+      "source_url": "https://github.com/SilviaB24/DLX-Processor-Portfolio",
+      "repo_owner": "SilviaB24",
+      "repo_name": "DLX-Processor-Portfolio",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic-design",
+        "cadence-innovus",
+        "physical-design",
+        "risc-processor",
+        "static-timing-analysis",
+        "synopsys-dc",
+        "vhdl",
+        "vlsi"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.188064Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "zaneham-dozenal-alu",
+      "name": "Dozenal Alu",
+      "summary": "Base-12 arithmetic in silicon. 182 SKY130 gates. The Mesopotamians were right.",
+      "source_url": "https://github.com/Zaneham/dozenal-alu",
+      "repo_owner": "Zaneham",
+      "repo_name": "dozenal-alu",
+      "pdk": "skywater130",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "arithmetic",
+        "asic-design",
+        "base-12",
+        "chip-design",
+        "dozenal",
+        "duodecimal",
+        "mesopotamia",
+        "new-zealand",
+        "number-systems",
+        "open-hardware",
+        "skywater-sky130",
+        "systemverilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.193966Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-raven-picorv32",
+      "name": "Raven Picorv32",
+      "summary": "Silicon-validated SoC implementation of the PicoSoc/PicoRV32",
+      "source_url": "https://github.com/efabless/raven-picorv32",
+      "repo_owner": "efabless",
+      "repo_name": "raven-picorv32",
+      "pdk": "unknown",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.210289Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-raptor",
+      "name": "Raptor",
+      "summary": "Arm Cortex-M0 based Customizable SoC for IoT Applications",
+      "source_url": "https://github.com/efabless/raptor",
+      "repo_owner": "efabless",
+      "repo_name": "raptor",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "asic",
+        "cortex-m0",
+        "custom",
+        "ic",
+        "m0",
+        "silicon",
+        "soc",
+        "verilog"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.212745Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-ravenna",
+      "name": "Ravenna",
+      "summary": "32-bit RISC-V microcontroller",
+      "source_url": "https://github.com/efabless/ravenna",
+      "repo_owner": "efabless",
+      "repo_name": "ravenna",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "magic",
+        "open",
+        "qflow",
+        "risc-v",
+        "riscv",
+        "source",
+        "vlsi",
+        "vlsi-design"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.213247Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-caravel-ibex",
+      "name": "Caravel Ibex",
+      "summary": "An example project that utilizes caravel user space for an ibex based SoC",
+      "source_url": "https://github.com/efabless/caravel_ibex",
+      "repo_owner": "efabless",
+      "repo_name": "caravel_ibex",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "caravel",
+        "ibex",
+        "mpw-two",
+        "openlane",
+        "soc",
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.226369Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-foss-asic-tools",
+      "name": "Foss Asic Tools",
+      "summary": "FOSS-ASIC-TOOLS is all in one container for SKY130 based design both Analog and Digital. Below is a list of the current tools already installed and ready to use.",
+      "source_url": "https://github.com/efabless/foss-asic-tools",
+      "repo_owner": "efabless",
+      "repo_name": "foss-asic-tools",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.230770Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-caravel-mgmt-soc-litex",
+      "name": "Caravel Mgmt Soc Litex",
+      "summary": "https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/",
+      "source_url": "https://github.com/efabless/caravel_mgmt_soc_litex",
+      "repo_owner": "efabless",
+      "repo_name": "caravel_mgmt_soc_litex",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.232240Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-openserdes",
+      "name": "Openserdes",
+      "summary": "Digitally synthesizable architecture for SerDes using Skywater Open PDK 130 nm technology.",
+      "source_url": "https://github.com/efabless/OpenSERDES",
+      "repo_owner": "efabless",
+      "repo_name": "OpenSERDES",
+      "pdk": "skywater130",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "SERDES"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.239258Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "efabless-caravel-mgmt-soc-gf180mcu",
+      "name": "Caravel Mgmt Soc Gf180Mcu",
+      "summary": "This repository is the GF180MCU port of management core for Caravel.  For more information about the Caravel management SoC, see https://github.com/efabless/caravel_mgmt_soc_litex.",
+      "source_url": "https://github.com/efabless/caravel_mgmt_soc_gf180mcu",
+      "repo_owner": "efabless",
+      "repo_name": "caravel_mgmt_soc_gf180mcu",
+      "pdk": "gf180",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.246816Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "google-libkml",
+      "name": "Libkml",
+      "summary": "Reference implementation of OGC KML 2.2",
+      "source_url": "https://github.com/google/libkml",
+      "repo_owner": "google",
+      "repo_name": "libkml",
+      "pdk": "unknown",
+      "circuit_class": "analog",
+      "circuit_type": [
+        "Reference"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.300539Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-rocket-chip",
+      "name": "Rocket Chip",
+      "summary": "Rocket Chip Generator",
+      "source_url": "https://github.com/chipsalliance/rocket-chip",
+      "repo_owner": "chipsalliance",
+      "repo_name": "rocket-chip",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "chip-generator",
+        "chisel",
+        "riscv",
+        "rocket-chip",
+        "rtl",
+        "scala"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.307570Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-riscv-dv",
+      "name": "Riscv Dv",
+      "summary": "Random instruction generator for RISC-V processor verification",
+      "source_url": "https://github.com/chipsalliance/riscv-dv",
+      "repo_owner": "chipsalliance",
+      "repo_name": "riscv-dv",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.311641Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-veerwolf",
+      "name": "Veerwolf",
+      "summary": "FuseSoC-based SoC for VeeR EH1 and EL2",
+      "source_url": "https://github.com/chipsalliance/VeeRwolf",
+      "repo_owner": "chipsalliance",
+      "repo_name": "VeeRwolf",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "fusesoc",
+        "swerv",
+        "tools",
+        "veer"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.314716Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-surelog",
+      "name": "Surelog",
+      "summary": "SystemVerilog 2017 Pre-processor, Parser, Elaborator, UHDM Compiler. Provides IEEE Design/TB C/C++ VPI and Python AST & UHDM APIs. Compiles on Linux gcc, Windows msys2-gcc & msvc, OsX ",
+      "source_url": "https://github.com/chipsalliance/Surelog",
+      "repo_owner": "chipsalliance",
+      "repo_name": "Surelog",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "antlr",
+        "antlr4-grammar",
+        "elaboration",
+        "linter",
+        "parser",
+        "parser-ast",
+        "preprocessor",
+        "python-api",
+        "systemverilog",
+        "uvm",
+        "verilog",
+        "vpi",
+        "vpi-api",
+        "vpi-standard"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.317449Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-dromajo",
+      "name": "Dromajo",
+      "summary": "RISC-V RV64GC emulator designed for RTL co-simulation",
+      "source_url": "https://github.com/chipsalliance/dromajo",
+      "repo_owner": "chipsalliance",
+      "repo_name": "dromajo",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.319607Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-riscv-v-spec",
+      "name": "Riscv V Spec",
+      "summary": "Working draft of the proposed RISC-V V vector extension",
+      "source_url": "https://github.com/chipsalliance/riscv-v-spec",
+      "repo_owner": "chipsalliance",
+      "repo_name": "riscv-v-spec",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.330002Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-cores-swerv-support-package",
+      "name": "Cores Swerv Support Package",
+      "summary": "Processor support packages",
+      "source_url": "https://github.com/chipsalliance/Cores-SweRV-Support-Package",
+      "repo_owner": "chipsalliance",
+      "repo_name": "Cores-SweRV-Support-Package",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.330501Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-caravel-swerv-el2",
+      "name": "Caravel Swerv El2",
+      "summary": "Caravel is a standard SoC hardness with on chip resources to control and read/write operations from a user-dedicated space.",
+      "source_url": "https://github.com/chipsalliance/caravel-swerv-el2",
+      "repo_owner": "chipsalliance",
+      "repo_name": "caravel-swerv-el2",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "SoC"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.333410Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-riscv-fw-infrastructure",
+      "name": "Riscv Fw Infrastructure",
+      "summary": "SDK Firmware infrastructure, contain RTOS Abstraction Layer, demos, SweRV Processor Support Package, and more ...",
+      "source_url": "https://github.com/chipsalliance/riscv-fw-infrastructure",
+      "repo_owner": "chipsalliance",
+      "repo_name": "riscv-fw-infrastructure",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor",
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.339732Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-riscv-vector-tests",
+      "name": "Riscv Vector Tests",
+      "summary": "Unit tests generator for RVV 1.0",
+      "source_url": "https://github.com/chipsalliance/riscv-vector-tests",
+      "repo_owner": "chipsalliance",
+      "repo_name": "riscv-vector-tests",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [
+        "generator",
+        "riscv",
+        "rvv",
+        "spike",
+        "testsuite"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.343623Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "chipsalliance-rvdecoderdb",
+      "name": "Rvdecoderdb",
+      "summary": "The Scala parser to parse riscv/riscv-opcodes generate",
+      "source_url": "https://github.com/chipsalliance/rvdecoderdb",
+      "repo_owner": "chipsalliance",
+      "repo_name": "rvdecoderdb",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core"
+      ],
+      "silicon_proven": false,
+      "specifications": {},
+      "tags": [],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.352322Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "tinytapeout-tinytapeout-frequency-div",
+      "name": "Tinytapeout Frequency Div",
+      "summary": "frequency divider tiny tapeout design",
+      "source_url": "https://github.com/TinyTapeout/tinytapeout_frequency_div",
+      "repo_owner": "TinyTapeout",
+      "repo_name": "tinytapeout_frequency_div",
+      "pdk": "unknown",
+      "circuit_class": "mixed-signal",
+      "circuit_type": [
+        "Frequency Divider"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.363615Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "tinytapeout-tinytapeout-bintristateloadablecounter",
+      "name": "Tinytapeout Bintristateloadablecounter",
+      "summary": "This IP block simulates a binary synchronous (parallel) MOD-4 counter. Applications are CPU's, PWM signal generators, etc. It features:  - tri-direction (pause, count up, count down)  - loadable (use data[3:1], eg. for jump instruction) - synchronous output(at rising edge) with async (ripple) setup of next count)  - easy to control, fast and scalable (each 1 bit counter only depends on previous counter)",
+      "source_url": "https://github.com/TinyTapeout/tinytapeout_bintristateloadablecounter",
+      "repo_owner": "TinyTapeout",
+      "repo_name": "tinytapeout_bintristateloadablecounter",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.395831Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "tinytapeout-tinytapeout-mcpu5",
+      "name": "Tinytapeout Mcpu5",
+      "summary": "8 bit CPU optimized for the constraints of tinytapeout",
+      "source_url": "https://github.com/TinyTapeout/tinytapeout_mcpu5",
+      "repo_owner": "TinyTapeout",
+      "repo_name": "tinytapeout_mcpu5",
+      "pdk": "unknown",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "Processor"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "tapeout"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.399635Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-lna-24ghz",
+      "name": "Lna 24Ghz",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Dec2023/tree/main/LNA_24GHz",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "LNA_24GHz",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.405742Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-y0-opensource-lna",
+      "name": "Y0 Opensource Lna",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Dec2023/tree/main/Y0_openSource_LNA",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "Y0_openSource_LNA",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.406223Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-analogldo-exampledesign",
+      "name": "Analogldo Exampledesign",
+      "summary": "> © Daniel Arevalos, Innovations for High Performance Microelectronics (IHP).",
+      "source_url": "https://github.com/IHP-GmbH/TO_May2024/tree/main/AnalogLDO_exampleDesign",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "AnalogLDO_exampleDesign",
+      "pdk": "ihp130sg",
+      "circuit_class": "unknown",
+      "circuit_type": [
+        "LDO"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.406891Z",
+      "local_path": null,
+      "readme_excerpt": "# LDO - Design example for IHP - Open Source PDK.\n\n> © Daniel Arevalos, Innovations for High Performance Microelectronics (IHP).\n\n### Directory Structure\n\n```\n├─ 📁 klayout\n├─ 📁 xschem\n├─ 📁 python\n├─ 📁 results\n└─ 📄Makefile.mk                  \n```\n"
+    },
+    {
+      "id": "ihp-gmbh-basilisk",
+      "name": "Basilisk",
+      "summary": "Basilisk is a tapeout of [Cheshire-IHP130-o](https://github.com/pulp-platform/cheshire-ihp130-o) which is an implementation of the [Cheshire SoC platform](https://github.com/pulp-platform/cheshire) in IHP130 using only open-source tools from RTL to GDS.",
+      "source_url": "https://github.com/IHP-GmbH/TO_May2024/tree/main/Basilisk",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "Basilisk",
+      "pdk": "ihp130sg",
+      "circuit_class": "digital",
+      "circuit_type": [
+        "RISC-V Core",
+        "SoC"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.408239Z",
+      "local_path": null,
+      "readme_excerpt": "# Basilisk Tapeout (May 2024)\n\nBasilisk is a tapeout of [Cheshire-IHP130-o](https://github.com/pulp-platform/cheshire-ihp130-o) which is an implementation of the [Cheshire SoC platform](https://github.com/pulp-platform/cheshire) in IHP130 using only open-source tools from RTL to GDS. \n\nBasilisk (Cheshire-IHP-130-o) is developed as part of the PULP project, a joint effort between ETH Zurich and the University of Bologna. \n\n**Important:**\nFor the newest version, visit the [Cheshire-IHP130-o](https"
+    },
+    {
+      "id": "ihp-gmbh-elemrv",
+      "name": "Elemrv",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_May2024/tree/main/ElemRV",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "ElemRV",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.408712Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-u-hawaii-ee628-spring-2024",
+      "name": "U Hawaii Ee628 Spring 2024",
+      "summary": "EE 628 (University of Hawaiʻi at Mānoa)  \nhttps://github.com/bmurmann/EE628",
+      "source_url": "https://github.com/IHP-GmbH/TO_May2024/tree/main/U_Hawaii_EE628_Spring_2024",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "U_Hawaii_EE628_Spring_2024",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "LDO"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.409439Z",
+      "local_path": null,
+      "readme_excerpt": "# Chip Design for IHP SG13G2 Tapeout (May 2024)\n\nEE 628 (University of Hawaiʻi at Mānoa)  \nhttps://github.com/bmurmann/EE628\n\nThis chip contains six copies of an incremental delta-sigma modulator (one of them is powered by an an LDO). The chip dimensions are 1300 x 1300 (without seal ring).\n\n![EE 628 Chip](UHEE628_S2024.png)"
+    },
+    {
+      "id": "ihp-gmbh-ts-pr-may2024",
+      "name": "Ts Pr May2024",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_May2024/tree/main/ts_pr_May2024",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "ts_pr_May2024",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.409944Z",
+      "local_path": null,
+      "readme_excerpt": "## Some test structures for taping out in May 2024\n"
+    },
+    {
+      "id": "ihp-gmbh-ac3e-usm-tdbuck",
+      "name": "Ac3E Usm Tdbuck",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/AC3E_USM_TDBUCK",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "AC3E_USM_TDBUCK",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.410421Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-bg",
+      "name": "Bg",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/BG",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "BG",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.410955Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-chipchile-canelos24-workshopto",
+      "name": "Chipchile Canelos24 Workshopto",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/CHIPCHILE_CANELOS24_WorkshopTO",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "CHIPCHILE_CANELOS24_WorkshopTO",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.411447Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-cryochip",
+      "name": "Cryochip",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/CryoChip",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "CryoChip",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.411924Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-differntial-amp",
+      "name": "Differntial Amp",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/Differntial_Amp",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "Differntial_Amp",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.412403Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-exampledesign",
+      "name": "Exampledesign",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/ExampleDesign",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "ExampleDesign",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.412875Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-flowspace-srambitcelltest",
+      "name": "Flowspace Srambitcelltest",
+      "summary": "See [doc/README.md](doc/README.md)",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/FlowSpace_SRAMBitCellTest",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "FlowSpace_SRAMBitCellTest",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.413374Z",
+      "local_path": null,
+      "readme_excerpt": "See [doc/README.md](doc/README.md)\n"
+    },
+    {
+      "id": "ihp-gmbh-martin",
+      "name": "Martin",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/MARTIn",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "MARTIn",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.413876Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-maskedandunmaskedaes",
+      "name": "Maskedandunmaskedaes",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/MaskedAndUnmaskedAES",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "MaskedAndUnmaskedAES",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.414363Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-arlet6502",
+      "name": "Arlet6502",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/arlet6502",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "arlet6502",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.414835Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-i2c-gpio-expander",
+      "name": "I2C Gpio Expander",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/i2c-gpio-expander",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "i2c-gpio-expander",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "GPIO"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.415307Z",
+      "local_path": null,
+      "readme_excerpt": ""
+    },
+    {
+      "id": "ihp-gmbh-sg13g2-io-testchip",
+      "name": "Sg13G2 Io Testchip",
+      "summary": "",
+      "source_url": "https://github.com/IHP-GmbH/TO_Nov2024/tree/main/sg13g2_io_testchip",
+      "repo_owner": "IHP-GmbH",
+      "repo_name": "sg13g2_io_testchip",
+      "pdk": "ihp130sg",
+      "circuit_class": "optical",
+      "circuit_type": [
+        "unknown"
+      ],
+      "silicon_proven": true,
+      "specifications": {},
+      "tags": [
+        "sg13g2",
+        "tapeout",
+        "silicon-proven"
+      ],
+      "classified_by": "keyword",
+      "classified_at": "2026-07-06T13:34:50.415787Z",
+      "local_path": null,
+      "readme_excerpt": ""
     }
   ]
 }

@@ -18,7 +18,7 @@ def on_pre_build(*, config: MkDocsConfig) -> None:
 
     designs = db.get("designs", [])
 
-    catalog_path = Path(config.docs_dir) / "catalog.md"
+    catalog_path = Path(config.docs_dir) / "library.md"
     catalog_path.write_text(_render_catalog(designs))
 
     stats_path = Path(config.docs_dir) / "stats.md"
@@ -36,10 +36,10 @@ def _render_catalog(designs: list[dict]) -> str:
 
     parts = [
         "---",
-        "title: Catalog",
+        "title: Library",
         "---",
         "",
-        "# Design Catalog",
+        "# Design Library",
         "",
         '<div class="catalog-controls">',
         '  <input type="text" id="filter-search" placeholder="Search designs..." class="catalog-search">',
@@ -104,7 +104,7 @@ def _render_stats(designs: list[dict]) -> str:
             },
             indent=2,
         )
-        return f"```echarts\n{option}\n```"
+        return f"/// echarts\n{option}\n///"
 
     def _bar_chart(title: str, data: dict[str, int]) -> str:
         sorted_items = sorted(data.items(), key=lambda x: x[1], reverse=True)
@@ -120,7 +120,7 @@ def _render_stats(designs: list[dict]) -> str:
             },
             indent=2,
         )
-        return f"```echarts\n{option}\n```"
+        return f"/// echarts\n{option}\n///"
 
     parts = [
         "---",

@@ -36,7 +36,7 @@ Each milestone produces one commit.
 
 ---
 
-## ~~Milestone 3: LLM Classification Pipeline~~ (skipped)
+## ~~Milestone 3: LLM Classification Pipeline~~ (skipped — reinstated as Milestone 5)
 
 ---
 
@@ -60,3 +60,18 @@ Each milestone produces one commit.
 - [x] Create `.github/workflows/deploy.yml`: on push to main → mkdocs build → GitHub Pages
 - [ ] Polish `.github/workflows/classify.yml`: PR creation instead of direct push, validation step
 - [x] Write tests: `tests/test_stats.py`, `tests/test_catalog_hook.py`
+
+---
+
+## Milestone 5: Keyword + TF-IDF Classification of Discovery Candidates
+
+Automatically convert `candidates.json` into classified `Design` entries in `data/designs.json` using a local keyword + TF-IDF classifier (scikit-learn). No API key needed.
+
+- [x] Create `src/openiclib/keyword_classifier.py`: TF-IDF + cosine similarity with keyword-defined class prototypes, exact keyword matching for PDK/circuit type/silicon proven
+- [x] Extend CLI: `openiclib classify --input candidates.json --output data/designs.json [--dry-run]`
+- [x] Merge strategy: new designs added by `source_url`; existing designs skipped unless `--force`
+- [x] Add `scikit-learn` to dependencies (replaced `anthropic`)
+- [x] Add `ClassifiedBy.KEYWORD` enum value + protobuf mapping
+- [x] Create `.github/workflows/classify.yml`: weekly cron + manual dispatch → discover → classify → open PR
+- [x] Write tests: `tests/test_keyword_classifier.py`
+- [x] Validate output: `openiclib db validate` runs as CI step after classification

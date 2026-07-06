@@ -6,7 +6,7 @@ from unittest.mock import AsyncMock
 import httpx
 import pytest
 
-from openiclib.discover import GitHubDiscoverer
+from openiclib.discover import GitHubDiscoverer, TapeoutSource
 from openiclib.discover_gitlab import GitLabDiscoverer
 from openiclib.types import CandidateRepo
 
@@ -213,6 +213,159 @@ class TestGitLabDiscoverer:
             text = await gl._fetch_readme(123)
 
         assert text == readme_content
+
+
+class TestCrawlTapeoutRepos:
+    @pytest.mark.asyncio
+    async def test_ihp_style_root_dirs(self):
+        """IHP tapeout repos list designs at root level with README.md."""
+        dir_listing = [
+            {"name": "160GHz_LNA", "type": "dir"},
+            {"name": "40GHz_TIA", "type": "dir"},
+            {"name": "drc", "type": "dir"},
+            {"name": ".github", "type": "dir"},
+            {"name": "README.md", "type": "file"},
+        ]
+        readme_content = "# 160GHz LNA\nA low noise amplifier."
+        encoded = base64.b64encode(readme_content.encode()).decode()
+
+        async def mock_get(url, **kwargs):
+            if "/contents" in url and url.endswith("/contents"):
+                return _mock_response(dir_listing)
+            if "160GHz_LNA/README.md" in url or "40GHz_TIA/README.md" in url:
+                return _mock_response({"content": encoded, "encoding": "base64"})
+            return _mock_response({}, status_code=404)
+
+        source = TapeoutSource("IHP-GmbH", "TO_Apr2025", pdk_topic="sg13g2")
+
+        async with GitHubDiscoverer(token="fake") as gh:
+            gh._client = AsyncMock()
+            gh._client.get = AsyncMock(side_effect=mock_get)
+            candidates = await gh.crawl_tapeout_repos([source])
+
+        assert len(candidates) == 2
+        names = {c.name for c in candidates}
+        assert "160GHz_LNA" in names
+        assert "40GHz_TIA" in names
+        assert "drc" not in names
+
+        lna = next(c for c in candidates if c.name == "160GHz_LNA")
+        assert "sg13g2" in lna.topics
+        assert "tapeout" in lna.topics
+        assert "silicon-proven" in lna.topics
+        assert lna.readme_text == readme_content
+        assert lna.source == "github-tapeout"
+        assert "/tree/main/160GHz_LNA" in lna.url
+
+    @pytest.mark.asyncio
+    async def test_tt_style_projects_subdir(self):
+        """TinyTapeout shuttle repos list projects under projects/ with info.yaml."""
+        dir_listing = [
+            {"name": "tt_um_my_design", "type": "dir"},
+            {"name": "tt_um_factory_test", "type": "dir"},
+        ]
+        info_yaml = (
+            "project:\n"
+            "  title: My Cool Design\n"
+            "  description: A digital counter\n"
+        )
+        encoded = base64.b64encode(info_yaml.encode()).decode()
+
+        async def mock_get(url, **kwargs):
+            if "contents/projects" in url and not url.endswith(".yaml"):
+                return _mock_response(dir_listing)
+            if "info.yaml" in url:
+                return _mock_response({"content": encoded, "encoding": "base64"})
+            return _mock_response({}, status_code=404)
+
+        source = TapeoutSource(
+            "TinyTapeout", "tinytapeout-06",
+            subpath="projects", pdk_topic="sky130",
+            info_file="info.yaml", extra_topics=("tinytapeout",),
+        )
+
+        async with GitHubDiscoverer(token="fake") as gh:
+            gh._client = AsyncMock()
+            gh._client.get = AsyncMock(side_effect=mock_get)
+            candidates = await gh.crawl_tapeout_repos([source])
+
+        assert len(candidates) == 2
+        design = next(c for c in candidates if c.name == "tt_um_my_design")
+        assert "sky130" in design.topics
+        assert "tinytapeout" in design.topics
+        assert "tapeout" in design.topics
+        assert "My Cool Design" in design.description
+        assert "A digital counter" in design.description
+        assert "/tree/main/projects/tt_um_my_design" in design.url
+
+    @pytest.mark.asyncio
+    async def test_skip_dirs_filtering(self):
+        dir_listing = [
+            {"name": "design_a", "type": "dir"},
+            {"name": "docs", "type": "dir"},
+            {"name": "symbol", "type": "dir"},
+            {"name": ".media", "type": "dir"},
+        ]
+
+        async def mock_get(url, **kwargs):
+            if "/contents" in url:
+                return _mock_response(dir_listing)
+            return _mock_response({}, status_code=404)
+
+        source = TapeoutSource("org", "repo", pdk_topic="sg13g2")
+
+        async with GitHubDiscoverer() as gh:
+            gh._client = AsyncMock()
+            gh._client.get = AsyncMock(side_effect=mock_get)
+            candidates = await gh.crawl_tapeout_repos([source])
+
+        assert len(candidates) == 1
+        assert candidates[0].name == "design_a"
+
+    @pytest.mark.asyncio
+    async def test_deduplicates_urls(self):
+        dir_listing = [{"name": "design_a", "type": "dir"}]
+
+        async def mock_get(url, **kwargs):
+            if "/contents" in url:
+                return _mock_response(dir_listing)
+            return _mock_response({}, status_code=404)
+
+        source = TapeoutSource("org", "repo", pdk_topic="sg13g2")
+
+        async with GitHubDiscoverer() as gh:
+            gh._client = AsyncMock()
+            gh._client.get = AsyncMock(side_effect=mock_get)
+            c1 = await gh.crawl_tapeout_repos([source])
+            c2 = await gh.crawl_tapeout_repos([source])
+
+        assert len(c1) == 1
+        assert len(c2) == 0
+
+    @pytest.mark.asyncio
+    async def test_handles_api_failure(self):
+        async with GitHubDiscoverer() as gh:
+            gh._client = AsyncMock()
+            gh._client.get = AsyncMock(return_value=_mock_response({}, status_code=404))
+            candidates = await gh.crawl_tapeout_repos(
+                [TapeoutSource("org", "repo")]
+            )
+
+        assert candidates == []
+
+    @pytest.mark.asyncio
+    async def test_parse_info_yaml(self):
+        title, desc = GitHubDiscoverer._parse_info_yaml(
+            "project:\n  title: My Chip\n  description: A fast ADC\n"
+        )
+        assert title == "My Chip"
+        assert desc == "A fast ADC"
+
+    @pytest.mark.asyncio
+    async def test_parse_info_yaml_invalid(self):
+        title, desc = GitHubDiscoverer._parse_info_yaml("not valid yaml: [")
+        assert title == ""
+        assert desc == ""
 
 
 class TestCandidateRepo:

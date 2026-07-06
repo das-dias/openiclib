@@ -34,6 +34,7 @@ class ClassifiedBy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CLASSIFIED_BY_LLM_GITHUB_MODELS: _ClassVar[ClassifiedBy]
     CLASSIFIED_BY_LLM_CLAUDE: _ClassVar[ClassifiedBy]
     CLASSIFIED_BY_LLM_OLLAMA: _ClassVar[ClassifiedBy]
+    CLASSIFIED_BY_KEYWORD: _ClassVar[ClassifiedBy]
 PDK_UNKNOWN: PDK
 PDK_SKYWATER130: PDK
 PDK_IHP130SG: PDK
@@ -50,6 +51,7 @@ CLASSIFIED_BY_MANUAL: ClassifiedBy
 CLASSIFIED_BY_LLM_GITHUB_MODELS: ClassifiedBy
 CLASSIFIED_BY_LLM_CLAUDE: ClassifiedBy
 CLASSIFIED_BY_LLM_OLLAMA: ClassifiedBy
+CLASSIFIED_BY_KEYWORD: ClassifiedBy
 
 class Design(_message.Message):
     __slots__ = ("id", "name", "summary", "source_url", "repo_owner", "repo_name", "pdk", "circuit_class", "circuit_type", "silicon_proven", "specifications", "tags", "classified_by", "classified_at", "local_path", "readme_excerpt")

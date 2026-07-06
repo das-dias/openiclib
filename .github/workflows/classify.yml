@@ -1,0 +1,49 @@
+name: Discover & Classify Designs
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Weekly, Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Discover candidates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run openiclib discover --source all --output candidates.json -v
+
+      - name: Classify candidates
+        run: uv run openiclib classify --input candidates.json --output data/designs.json -v
+
+      - name: Validate database
+        run: uv run openiclib db validate
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: update design database from discovery pipeline"
+          title: "Update design database"
+          body: |
+            Automated update from the discovery & classification pipeline.
+
+            - Discovered candidates from GitHub and GitLab
+            - Classified using keyword + TF-IDF classifier (scikit-learn)
+            - Database validated with `openiclib db validate`
+          branch: auto/classify-designs
+          delete-branch: true

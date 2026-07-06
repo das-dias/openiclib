@@ -2,7 +2,7 @@ REPO_URL     := https://github.com/IHP-GmbH/TO_Apr2025.git
 CLONE_PATH   := pdks/ihp/TO_Apr2025
 SPARSE_DIRS  := 160GHz_LNA 40_GHZ_LOW_NOISE_TIA
 
-.PHONY: all init symlinks update clean help
+.PHONY: all init symlinks update clean discover classify pipeline lint test docs help
 
 all: init
 
@@ -46,14 +46,44 @@ clean:
 	@echo "[clean] Removing $(CLONE_PATH)..."
 	rm -rf $(CLONE_PATH)
 
+## Discover candidate repos from GitHub and GitLab
+discover:
+	uv run openiclib discover --source all --output candidates.json -v
+
+## Classify candidates into data/designs.json using Claude
+classify:
+	uv run openiclib classify --input candidates.json --output data/designs.json -v
+
+## Full pipeline: discover → classify → validate
+pipeline: discover classify
+	uv run openiclib db validate
+
+## Run linter
+lint:
+	uv run ruff check .
+
+## Run tests
+test:
+	uv run pytest
+
+## Build docs
+docs:
+	uv run mkdocs build --strict
+
 help:
 	@echo ""
 	@echo "Targets:"
-	@echo "  make init     — sparse clone and create symlinks (default)"
-	@echo "  make symlinks — (re)create symlinks only"
-	@echo "  make update   — pull latest changes"
-	@echo "  make clean    — remove clone and symlinks"
-	@echo "  make help     — show this message"
+	@echo "  make init      — sparse clone and create symlinks (default)"
+	@echo "  make symlinks  — (re)create symlinks only"
+	@echo "  make update    — pull latest changes"
+	@echo "  make clean     — remove clone and symlinks"
+	@echo "  make discover  — discover IC design repos from GitHub/GitLab"
+	@echo "  make classify  — classify candidates into designs.json using Claude"
+	@echo "  make pipeline  — full discover → classify → validate pipeline"
+	@echo "  make lint      — run ruff linter"
+	@echo "  make test      — run pytest"
+	@echo "  make docs      — build MkDocs site"
+	@echo "  make help      — show this message"
 	@echo ""
 	@echo "Repo:        $(REPO_URL)"
 	@echo "Clone path:  $(CLONE_PATH)"
