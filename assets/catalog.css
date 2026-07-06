@@ -1,0 +1,206 @@
+.catalog-controls {
+  margin-bottom: 1.5rem;
+}
+
+.catalog-search {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-border, #d1d9e0);
+  border-radius: 0.375rem;
+  background: var(--color-background, #fff);
+  color: var(--color-foreground, #1f2328);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.catalog-search:focus {
+  outline: none;
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+}
+
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.catalog-select {
+  padding: 0.3125rem 0.75rem;
+  border: 1px solid var(--color-border, #d1d9e0);
+  border-radius: 0.375rem;
+  background: var(--color-background, #f6f8fa);
+  color: var(--color-foreground, #1f2328);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.catalog-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--color-foreground, #1f2328);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.catalog-count {
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground, #656d76);
+  margin-bottom: 1rem;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+/* GitHub-style repo card */
+.design-card {
+  border: 1px solid var(--color-border, #d1d9e0);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  background: var(--color-card, #fff);
+  color: var(--color-card-foreground, #1f2328);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card-header h3 a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.card-header h3 a:hover {
+  text-decoration: underline;
+}
+
+.card-summary {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-muted-foreground, #656d76);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* GitHub-style topic badges */
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0 0.625rem;
+  border-radius: 2rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.badge-pdk {
+  background: #ddf4ff;
+  color: #0969da;
+}
+
+.badge-class {
+  background: #ddf4ff;
+  color: #0969da;
+}
+
+.badge-type {
+  background: #ddf4ff;
+  color: #0969da;
+}
+
+.badge-proven {
+  background: #dafbe1;
+  color: #1a7f37;
+  font-size: 0.625rem;
+  line-height: 1.375rem;
+  flex-shrink: 0;
+}
+
+/* GitHub-style spec chips */
+.card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.card-spec {
+  font-size: 0.6875rem;
+  padding: 0.0625rem 0.375rem;
+  background: var(--color-muted, #f6f8fa);
+  color: var(--color-muted-foreground, #656d76);
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border, #d1d9e0);
+}
+
+/* GitHub-style footer with language dot + link */
+.card-footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground, #656d76);
+}
+
+.card-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-muted-foreground, #656d76);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.card-link:hover {
+  color: #0969da;
+}
+
+.card-link svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+@media (max-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
