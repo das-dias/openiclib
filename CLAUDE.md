@@ -10,8 +10,8 @@ Openiclib is an open-source library aggregating silicon-proven, taped-out IC des
 
 - **Python 3.12**, managed with **uv** (build backend: `uv_build`)
 - **Docs**: MkDocs with the `shadcn` theme. Serve locally with `uv run mkdocs serve`
-- **Linting**: `uv run ruff check .` (rules: E, F, I, UP; line-length 100; pdks/, hooks/, *_pb2.py excluded)
-- **Tests**: `uv run pytest` (80 tests covering models, database, discovery, classification, stats, and catalog hook)
+- **Linting**: `uv run ruff check .` (rules: E, F, I, UP; line-length 100; hooks/, *_pb2.py excluded)
+- **Tests**: `uv run pytest` (116 tests covering models, database, discovery, classification, stats, and catalog hook)
 - **CLI**: `uv run openiclib db list`, `uv run openiclib db validate`
 
 ## Key Commands
@@ -27,9 +27,8 @@ uv run openiclib db validate # Validate database integrity
 uv run openiclib discover --source github --dry-run  # Preview discovered repos
 uv run mkdocs serve          # Serve docs locally
 uv run mkdocs build --strict # Build docs (used in CI)
-make init                    # Sparse-clone IHP tapeout repo + create symlinks
-make update                  # Pull latest changes in the cloned tapeout repo
-make clean                   # Remove clone and symlinks
+make pipeline                # Full discover → classify → validate pipeline
+make docs                    # Build MkDocs site
 ```
 
 Recompile protobuf after editing `data/designs.proto`:
@@ -51,7 +50,7 @@ GitHub/GitLab APIs → discover.py → candidates.json
                                        ↓
                           catalog_hook.py (on_pre_build)
                            ↓           ↓            ↓
-                     catalog.md    stats.md    assets/designs.json
+                     library.md    stats.md    assets/designs.json
                            ↓
                       MkDocs build → GitHub Pages
 ```
@@ -76,17 +75,13 @@ Each design is classified by:
 - `src/openiclib/types.py` — `CandidateRepo` dataclass
 - `src/openiclib/keyword_classifier.py` — Classify candidates using TF-IDF + keyword matching (scikit-learn, no API key needed)
 - `src/openiclib/stats.py` — Statistics generation (Counter-based distributions by PDK, class, type, proven)
-- `hooks/catalog_hook.py` — MkDocs `on_pre_build` hook generating `catalog.md`, `stats.md`, and `assets/designs.json`
+- `hooks/catalog_hook.py` — MkDocs `on_pre_build` hook generating `library.md`, `stats.md`, and `assets/designs.json`
 
 ### Generated vs checked-in files
 
 These files are **generated at build time** by the catalog hook and gitignored — do not edit them directly:
-- `docs/catalog.md`, `docs/stats.md`, `docs/assets/designs.json`
-
-### PDK design hierarchy
-
-Designs are organized as `pdks/<foundry>/<design_name>`. Upstream tapeout repos are sparse-cloned as git submodules; symlinks at `pdks/<foundry>/<design>` point into the clone for flat access. The Makefile manages the lifecycle.
+- `docs/library.md`, `docs/stats.md`, `docs/assets/designs.json`
 
 ### Docs site
 
-MkDocs config is in `mkdocs.yml`. Uses `mkdocs-shadcn` theme with KaTeX math, ECharts charts (`shadcn.extensions.echarts.alpha`), and client-side JS filtering for the catalog page (`docs/assets/catalog.js` + `docs/assets/catalog.css`).
+MkDocs config is in `mkdocs.yml`. Uses `mkdocs-shadcn` theme with KaTeX math, ECharts charts (`shadcn.extensions.echarts.alpha`), and client-side JS filtering for the library page (`docs/assets/catalog.js` + `docs/assets/catalog.css`).
