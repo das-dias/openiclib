@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+import asyncio
+import dataclasses
+import json
+import logging
+import os
 from pathlib import Path
 
 import click
@@ -69,3 +74,81 @@ def validate(db_path: Path) -> None:
             click.echo(f"  - {err}", err=True)
         raise SystemExit(1)
     click.echo("Database is valid.")
+
+
+_KNOWN_REPOS_PATH = Path(__file__).resolve().parents[2] / "data" / "known_repos.txt"
+
+
+@main.command()
+@click.option(
+    "--source",
+    type=click.Choice(["github", "gitlab", "all"]),
+    default="all",
+    help="Which platform(s) to search",
+)
+@click.option(
+    "--output",
+    type=click.Path(path_type=Path),
+    default="data/candidates.json",
+    help="Output path for candidates JSON",
+)
+@click.option("--dry-run", is_flag=True, help="Print results without writing")
+@click.option("-v", "--verbose", is_flag=True, help="Enable verbose logging")
+def discover(source: str, output: Path, dry_run: bool, verbose: bool) -> None:
+    """Discover IC design repos on GitHub and GitLab."""
+    if verbose:
+        logging.basicConfig(level=logging.INFO)
+
+    asyncio.run(_discover_async(source, output, dry_run))
+
+
+async def _discover_async(source: str, output: Path, dry_run: bool) -> None:
+    from openiclib.discover import GitHubDiscoverer
+    from openiclib.discover_gitlab import GitLabDiscoverer
+    from openiclib.types import CandidateRepo
+
+    known_urls: list[str] = []
+    if _KNOWN_REPOS_PATH.exists():
+        known_urls = [
+            line.strip()
+            for line in _KNOWN_REPOS_PATH.read_text().splitlines()
+            if line.strip() and not line.startswith("#")
+        ]
+
+    all_candidates: list[CandidateRepo] = []
+    token = os.environ.get("GITHUB_TOKEN")
+
+    if source in ("github", "all"):
+        async with GitHubDiscoverer(token=token) as gh:
+            all_candidates.extend(await gh.discover_all(known_urls=known_urls))
+
+    if source in ("gitlab", "all"):
+        gitlab_token = os.environ.get("GITLAB_TOKEN")
+        async with GitLabDiscoverer(token=gitlab_token) as gl:
+            all_candidates.extend(await gl.discover_all())
+
+    # Dedup across sources by URL
+    seen: set[str] = set()
+    deduped: list[CandidateRepo] = []
+    for c in all_candidates:
+        if c.url not in seen:
+            seen.add(c.url)
+            deduped.append(c)
+
+    click.echo(f"Discovered {len(deduped)} unique repo(s)")
+
+    if dry_run:
+        for c in deduped:
+            star_str = f"  ({c.stars} stars)" if c.stars else ""
+            click.echo(f"  {c.url}{star_str}")
+            if c.description:
+                click.echo(f"    {c.description[:100]}")
+        return
+
+    data = [dataclasses.asdict(c) for c in deduped]
+    for item in data:
+        if item.get("last_updated"):
+            item["last_updated"] = item["last_updated"].isoformat()
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(data, indent=2) + "\n")
+    click.echo(f"Written to {output}")

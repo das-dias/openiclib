@@ -6,26 +6,26 @@ Each milestone produces one commit.
 
 ## Milestone 1: JSON Schema, Database, CLI & CI Scaffold
 
-- [ ] Define Pydantic models (`src/openiclib/models.py`): `Design`, `DesignDatabase`, enums for PDK (`skywater130`, `ihp130sg`, `gf180`, `gf90`, `gf45`), CircuitClass (`analog`, `digital`, `mixed-signal`), CircuitType
-- [ ] Create `src/openiclib/db.py`: load/save/validate `data/designs.json`
-- [ ] Export JSON Schema from Pydantic models to `data/schema.json`
-- [ ] Seed `data/designs.json` with 2 manually classified IHP designs (160GHz LNA, 40GHz TIA)
-- [ ] Create Click CLI (`src/openiclib/cli.py`): `openiclib db list`, `openiclib db validate`
-- [ ] Update `pyproject.toml`: add pydantic, click, pytest, ruff; add `[project.scripts]` entry
-- [ ] Write tests: `tests/test_models.py`, `tests/test_db.py`
-- [ ] Create `.github/workflows/ci.yml`: checkout → uv sync → ruff check → pytest → mkdocs build
+- [x] Define Pydantic models (`src/openiclib/models.py`): `Design`, `DesignDatabase`, enums for PDK, CircuitClass, CircuitType
+- [x] Create `src/openiclib/db.py`: load/save/validate `data/designs.json`
+- [x] Compile protobuf schema (`data/designs.proto`) — replaces JSON schema as canonical schema
+- [x] Seed `data/designs.json` with 2 manually classified IHP designs (160GHz LNA, 40GHz TIA)
+- [x] Create Click CLI (`src/openiclib/cli.py`): `openiclib db list`, `openiclib db validate`
+- [x] Update `pyproject.toml`: add pydantic, click, protobuf, pytest, ruff; add `[project.scripts]` entry
+- [x] Write tests: `tests/test_models.py`, `tests/test_db.py`
+- [x] Create `.github/workflows/ci.yml`: checkout → uv sync → ruff check → pytest → mkdocs build
 
 ---
 
 ## Milestone 2: GitHub/GitLab Discovery Pipeline
 
-- [ ] Create `src/openiclib/types.py`: `CandidateRepo` dataclass
-- [ ] Create `src/openiclib/discover.py`: `GitHubDiscoverer` (httpx, async) — topic search, keyword search, org crawl, README extraction
-- [ ] Create `src/openiclib/discover_gitlab.py`: `GitLabDiscoverer` with same interface
-- [ ] Curate `data/known_repos.txt` with known IC design repos (IHP-GmbH, efabless, etc.)
-- [ ] Extend CLI: `openiclib discover --source github [--dry-run] --output candidates.json`
-- [ ] Update `pyproject.toml`: add httpx dependency
-- [ ] Write tests: `tests/test_discover.py` with mocked HTTP responses
+- [x] Create `src/openiclib/types.py`: `CandidateRepo` dataclass
+- [x] Create `src/openiclib/discover.py`: `GitHubDiscoverer` (httpx, async) — topic search, keyword search, org crawl, README extraction
+- [x] Create `src/openiclib/discover_gitlab.py`: `GitLabDiscoverer` with same interface
+- [x] Curate `data/known_repos.txt` with known IC design repos (IHP-GmbH, efabless, etc.)
+- [x] Extend CLI: `openiclib discover --source github [--dry-run] --output candidates.json`
+- [x] Update `pyproject.toml`: add httpx, pytest-asyncio dependency
+- [x] Write tests: `tests/test_discover.py` with mocked HTTP responses (12 tests)
 
 ---
 

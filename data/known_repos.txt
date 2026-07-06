@@ -1,0 +1,5 @@
+https://github.com/IHP-GmbH/TO_Apr2025
+https://github.com/efabless/caravel_user_project
+https://github.com/google/skywater-pdk
+https://github.com/chipsalliance/silicon-notebooks
+https://github.com/RTimothyEdwards/open_pdks
