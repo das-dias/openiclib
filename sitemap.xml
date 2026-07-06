@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://openiclib.github.io/</loc>
+         <loc>https://das-dias.github.io/openiclib/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
     <url>
-         <loc>https://openiclib.github.io/examples/</loc>
+         <loc>https://das-dias.github.io/openiclib/examples/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
     <url>
-         <loc>https://openiclib.github.io/library/</loc>
+         <loc>https://das-dias.github.io/openiclib/library/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
     <url>
-         <loc>https://openiclib.github.io/stats/</loc>
+         <loc>https://das-dias.github.io/openiclib/stats/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
     <url>
-         <loc>https://openiclib.github.io/submitting/</loc>
+         <loc>https://das-dias.github.io/openiclib/submitting/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
     <url>
-         <loc>https://openiclib.github.io/technologies/</loc>
+         <loc>https://das-dias.github.io/openiclib/technologies/</loc>
          <lastmod>2026-07-06</lastmod>
     </url>
 </urlset>
