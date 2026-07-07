@@ -20,6 +20,7 @@
   - [Discovery Pipeline](#discovery-pipeline)
 - [Architecture](#architecture)
 - [Contributing](#contributing)
+- [Citing](#citing)
 - [License](#license)
 
 ---
@@ -184,6 +185,21 @@ uv sync                      # Install dependencies
 uv run pytest                # Run tests (116 tests)
 uv run ruff check .          # Lint
 uv run mkdocs build --strict # Build docs
+```
+
+## Citing
+
+If you use Openiclib in your research, please cite:
+
+```bibtex
+@software{dias2026openiclib,
+  author       = {Dias, Diogo},
+  title        = {Openiclib: Open Integrated Circuit Library},
+  year         = {2026},
+  url          = {https://github.com/das-dias/openiclib},
+  license      = {MIT},
+  note         = {A searchable catalog of silicon-proven IC designs from open PDKs (SKY130, IHP SG13G2, GF180)}
+}
 ```
 
 ## License
